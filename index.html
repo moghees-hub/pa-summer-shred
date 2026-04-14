@@ -131,15 +131,15 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .place-card__images img:first-child{grid-column:1/-1}
 .place-card__images img{width:100%;height:auto;border-radius:8px;display:block}
 
-/* PROBLEM / EXCUSES BLOCK (light) */
-.problem-light{background:var(--white);padding:56px 0}
+/* PROBLEM / EXCUSES BLOCK */
+.problem-light{background:#0a0a0a;padding:56px 0;color:#fff}
 .problem-light .container{max-width:1100px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch}
 .problem-light__copy{text-align:left}
 .problem-light__img{position:relative;border-radius:14px;overflow:hidden;min-height:320px}
 .problem-light__img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;position:absolute;inset:0}
-.problem-light p{font-size:16px;color:#000;font-weight:600;line-height:1.7;margin-bottom:14px}
-.problem-light p.lead{font-size:20px;font-weight:800}
-.problem-light p.italic-line{font-style:italic;font-weight:700;color:#000;margin:18px 0}
+.problem-light p{font-size:16px;color:rgba(255,255,255,0.85);font-weight:500;line-height:1.7;margin-bottom:14px}
+.problem-light p.lead{font-size:20px;font-weight:800;color:#fff}
+.problem-light p.italic-line{font-style:italic;font-weight:700;color:var(--gold);margin:18px 0}
 @media(max-width:768px){.problem-light .container{grid-template-columns:1fr;gap:28px}.problem-light__img{min-height:260px}}
 
 /* WHAT'S INCLUDED */
