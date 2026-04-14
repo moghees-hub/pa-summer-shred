@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer Shred – 16 Week Transformation Challenge | Physique Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://fast.wistia.com/player.js" async></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#FFD60A;
+  --gold-2:#F5B800;
+  --gold-grad:linear-gradient(135deg,#FFE03A 0%,#FFC107 50%,#F5A800 100%);
+  --gold-grad-soft:linear-gradient(135deg,#FFD60A 0%,#F5B800 100%);
+  --black:#0a0a0a;
+  --white:#fff;
+  --gray:#666;
+  --light:#fafbfc;
+  --border:#e5e7eb;
+  --text:#1a1a1a;
+  --text-secondary:#444;
+  --red:#e74c3c;
+  --green-num:#2ecc40;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* STICKY TOP BAR */
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:2px solid var(--gold);padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 1px 12px rgba(0,0,0,0.2)}
+.top-bar__text{color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}
+.top-bar__dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
+.top-bar__btn{background:var(--gold-grad);color:#000;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:8px 18px;border-radius:20px;text-decoration:none;transition:transform .2s,filter .2s;white-space:nowrap;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.top-bar__btn:hover{transform:scale(1.05);filter:brightness(1.08)}
+
+/* SCROLL REVEAL */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+[data-reveal].visible{opacity:1;transform:none}
+
+/* GENERIC CTA BAR (yellow stripe) */
+.cta-stripe{background:var(--gold-grad);padding:22px 20px;text-align:center;color:#000}
+.cta-stripe__small{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#000;opacity:.85;margin-bottom:10px}
+.cta-stripe__btn{display:inline-block;background:#000;color:var(--gold);font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:16px 36px;border-radius:8px;text-decoration:none;transition:transform .2s,background .2s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.cta-stripe__btn:hover{transform:scale(1.05);background:#1a1a1a}
+
+/* HERO */
+.hero{background:var(--black);padding:78px 0 28px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,214,10,0.15),transparent 60%);pointer-events:none}
+.hero .container{position:relative;z-index:1;width:100%;max-width:980px;margin:0 auto;padding:0 20px}
+.hero__eyebrow{display:inline-block;background:var(--gold-grad);color:#000;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:18px}
+.hero__title{font-size:clamp(40px,7vw,84px);font-weight:900;line-height:.95;letter-spacing:-.02em;color:var(--gold);margin-bottom:8px;text-transform:uppercase;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 30px rgba(255,214,10,0.25)}
+.hero__sub-title{font-size:clamp(14px,2vw,18px);font-weight:800;color:#fff;letter-spacing:.18em;text-transform:uppercase;margin-bottom:30px}
+.hero__headline{font-size:clamp(22px,3.6vw,40px);font-weight:900;line-height:1.1;color:#fff;margin:30px auto 24px;max-width:820px}
+.hero__headline em{font-style:normal;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero__cta{display:inline-block;background:var(--gold-grad);color:#000;font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:18px 40px;border-radius:8px;text-decoration:none;transition:transform .2s,filter .2s;cursor:pointer;border:none;font-family:'Inter',sans-serif;box-shadow:0 8px 28px rgba(255,184,0,0.35)}
+.hero__cta:hover{transform:scale(1.05);filter:brightness(1.08)}
+.video-wrap{max-width:820px;margin:34px auto 0;border-radius:16px;overflow:hidden;box-shadow:0 0 60px rgba(0,0,0,0.5),0 20px 60px rgba(0,0,0,0.4);border:2px solid rgba(255,214,10,0.2)}
+.hero__close-line{font-size:13px;color:#fff;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-top:24px;opacity:.9}
+.hero__close-line strong{color:var(--gold)}
+
+/* SECTION HEAD STRIPES (yellow bands like mockup) */
+.section-band{background:var(--gold-grad);padding:18px 20px;text-align:center}
+.section-band h2{font-size:clamp(20px,3.2vw,32px);font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#000;line-height:1.1}
+.section-band p{font-size:13px;font-weight:700;color:#000;margin-top:6px;opacity:.85}
+
+/* CHAMPION SECTION */
+.champion{background:#0a0a0a;padding:60px 0;color:#fff}
+.champion .container{max-width:1100px;margin:0 auto;padding:0 20px}
+.champion__grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:36px}
+.champion__images{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.champion__images img{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,0.08);display:block}
+.champion__quote{background:rgba(255,214,10,0.08);border-left:4px solid var(--gold);padding:24px 28px;border-radius:0 12px 12px 0;margin-bottom:24px}
+.champion__quote p{font-size:16px;line-height:1.6;color:#fff;font-weight:500;font-style:italic}
+.champion__quote cite{display:block;margin-top:14px;font-size:13px;font-weight:800;color:var(--gold);font-style:normal;letter-spacing:.08em}
+.champion__body p{font-size:15px;line-height:1.7;color:rgba(255,255,255,0.85);margin-bottom:16px}
+.champion__body p strong{color:var(--gold);font-weight:800}
+.champion__second-quote{background:rgba(255,255,255,0.04);border:1px solid rgba(255,214,10,0.2);padding:20px 24px;border-radius:12px;margin:20px 0}
+.champion__second-quote p{font-size:15px;font-style:italic;color:#fff;line-height:1.6}
+
+/* PLACES (2nd / 3rd) */
+.places{background:#0a0a0a;padding:50px 0 60px;color:#fff}
+.places .container{max-width:1100px;margin:0 auto;padding:0 20px}
+.places__grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+.place-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden}
+.place-card__title{padding:16px 20px;font-size:18px;font-weight:900;color:var(--gold);letter-spacing:.04em;text-align:center;border-bottom:1px solid rgba(255,255,255,0.06)}
+.place-card__images{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px}
+.place-card__images img{width:100%;height:auto;border-radius:8px;display:block}
+
+/* PROBLEM / EXCUSES BLOCK (light) */
+.problem-light{background:var(--white);padding:56px 0;text-align:center}
+.problem-light .container{max-width:760px;margin:0 auto;padding:0 20px}
+.problem-light h2{font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-.02em;color:var(--text);line-height:1.15;margin-bottom:24px}
+.problem-light p{font-size:16px;color:#000;font-weight:600;line-height:1.7;margin-bottom:14px}
+.problem-light p.lead{font-size:18px;font-weight:800}
+.problem-light p.italic-line{font-style:italic;font-weight:700;color:#000;margin:18px 0}
+
+/* WHAT'S INCLUDED */
+.included{background:var(--gold-grad-soft);padding:60px 0;color:#000}
+.included .container{max-width:980px;margin:0 auto;padding:0 20px}
+.included h2{font-size:clamp(26px,4vw,42px);font-weight:900;text-align:center;color:#000;letter-spacing:-.02em;margin-bottom:36px}
+.included__grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;background:#000;border-radius:18px;padding:36px 40px}
+.included__item{display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:15px;font-weight:600;line-height:1.5;padding:8px 0}
+.included__item::before{content:'\2713';color:var(--gold);font-weight:900;font-size:18px;flex-shrink:0;line-height:1.4}
+
+/* ONE SIZE */
+.onesize{background:#fff;padding:60px 0;text-align:center}
+.onesize .container{max-width:880px;margin:0 auto;padding:0 20px}
+.onesize__sub{font-size:15px;color:#000;font-weight:700;margin-bottom:30px;line-height:1.7;max-width:720px;margin-left:auto;margin-right:auto}
+.onesize__copy{text-align:left;max-width:760px;margin:0 auto}
+.onesize__copy p{font-size:15px;color:var(--text-secondary);font-weight:500;line-height:1.75;margin-bottom:14px}
+.onesize__copy p strong{color:#000;font-weight:800}
+.onesize__image{margin:0 auto 32px;max-width:760px;border-radius:14px;overflow:hidden}
+.onesize__image img{width:100%;height:auto;display:block}
+
+/* EXCUSES (4 cards) */
+.excuses{background:#fff;padding:60px 0;text-align:center}
+.excuses .container{max-width:1100px;margin:0 auto;padding:0 20px}
+.excuses h2{font-size:clamp(26px,4vw,40px);font-weight:900;color:var(--text);letter-spacing:-.02em;line-height:1.15}
+.excuses h2 em{font-style:normal;color:var(--gold-2)}
+.excuse-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
+.excuse-card{background:#0a0a0a;border:1px solid rgba(255,214,10,0.15);border-radius:16px;overflow:hidden;text-align:left;transition:transform .3s}
+.excuse-card:hover{transform:translateY(-4px)}
+.excuse-card__img{width:100%;height:340px;overflow:hidden;cursor:pointer;background:#1a1a1a}
+.excuse-card__img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.excuse-card__text{padding:24px 28px;color:#fff}
+.excuse-card__text strong.name{color:var(--gold);font-size:16px;font-weight:900;display:block;margin-bottom:8px}
+.excuse-card__text p{font-size:15px;color:#fff;line-height:1.55;margin-top:12px}
+.excuse-card__text p.q{font-style:italic;color:rgba(255,255,255,0.85)}
+.excuse-card__text strong.lost{color:var(--gold);font-weight:800}
+
+/* VIDEO TESTIMONIALS */
+.testimonials{background:#fff;padding:60px 0}
+.testimonials .container{max-width:1100px;margin:0 auto;padding:0 20px}
+.testimonials h2{font-size:clamp(26px,4vw,40px);font-weight:900;color:var(--text);text-align:center;letter-spacing:-.02em;line-height:1.15}
+.testimonials__sub{text-align:center;font-size:15px;color:#000;font-weight:600;margin-top:14px;max-width:720px;margin-left:auto;margin-right:auto}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.testi-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.08)}
+.testi-card__thumb{background:#000;overflow:hidden;aspect-ratio:9/16}
+.testi-card__body{padding:14px 16px;border-top:1px solid var(--border)}
+.testi-card__name{font-size:14px;font-weight:800;color:var(--text)}
+.testi-card__result{font-size:12px;color:var(--gold-2);font-weight:700;margin-top:4px;display:flex;align-items:center;gap:5px}
+.testi-card__result::before{content:'\2713';font-size:11px}
+
+/* TRANSFORMATIONS GRID */
+.transform-section{background:#fff;padding:40px 0 60px}
+.transform-section .container{max-width:1100px;margin:0 auto;padding:0 20px;text-align:center}
+.transform-section h2{font-size:clamp(24px,3.6vw,38px);font-weight:900;color:var(--text);letter-spacing:-.02em;line-height:1.2;max-width:820px;margin:0 auto}
+.transform-section h2 em{font-style:normal;color:var(--gold-2)}
+.transform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+.transform-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.transform-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,0,0.1)}
+.transform-card img{width:100%;height:auto;display:block;transition:transform .35s}
+.transform-card:hover img{transform:scale(1.04)}
+.transform-card__name{padding:10px 14px;font-size:12px;font-weight:800;text-align:center;border-top:1px solid var(--border)}
+
+/* BOTTOM CTA */
+.bottom-cta{background:#0a0a0a;padding:60px 20px;text-align:center;color:#fff}
+.bottom-cta__eyebrow{font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.bottom-cta h2{font-size:clamp(28px,4.4vw,44px);font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:24px}
+.bottom-cta__btn{display:inline-block;background:var(--gold-grad);color:#000;font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:18px 40px;border-radius:8px;text-decoration:none;transition:transform .2s,filter .2s;cursor:pointer;border:none;font-family:'Inter',sans-serif;box-shadow:0 8px 28px rgba(255,184,0,0.35)}
+.bottom-cta__btn:hover{transform:scale(1.05);filter:brightness(1.08)}
+
+/* FOOTER */
+.footer{background:#000;color:rgba(255,255,255,0.6);padding:40px 20px;text-align:center;font-size:12px}
+.footer img{height:48px;width:auto;display:inline-block;margin:0 auto 12px}
+.footer p{margin-top:6px}
+
+/* BOOKING MODAL */
+.booking-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.booking-overlay.active{display:flex}
+.booking-modal{background:#fff;border-radius:14px;width:100%;max-width:900px;max-height:92vh;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.booking-modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;background:rgba(0,0,0,0.06);border:none;border-radius:50%;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center}
+.booking-modal-close::before,.booking-modal-close::after{content:'';position:absolute;width:18px;height:2px;background:#000}
+.booking-modal-close::before{transform:rotate(45deg)}
+.booking-modal-close::after{transform:rotate(-45deg)}
+.booking-modal-content{flex:1;overflow-y:auto}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:10000;display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox img{max-width:100%;max-height:88vh;border-radius:8px}
+.lightbox-close{position:absolute;top:20px;right:20px;width:44px;height:44px;background:rgba(255,255,255,0.1);border:none;border-radius:50%;cursor:pointer;color:#fff;font-size:24px}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{padding:74px 0 24px}
+  .hero__title{font-size:54px;line-height:.92}
+  .hero__sub-title{font-size:13px;letter-spacing:.14em}
+  .hero__headline{font-size:22px;margin:24px auto 20px}
+  .champion__grid{grid-template-columns:1fr;gap:28px}
+  .places__grid{grid-template-columns:1fr;gap:18px}
+  .included__grid{grid-template-columns:1fr;padding:28px 24px;gap:8px}
+  .excuse-grid{grid-template-columns:1fr;gap:20px}
+  .excuse-card__img{height:300px}
+  .testi-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .transform-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .section-band h2{font-size:18px}
+  .top-bar{padding:8px 12px;gap:10px}
+  .top-bar__text{font-size:11px}
+  .top-bar__btn{padding:6px 14px;font-size:10px}
+}
+@media(max-width:480px){
+  .hero{padding:64px 0 20px}
+  .hero__title{font-size:42px}
+  .hero__headline{font-size:20px}
+  .champion,.places{padding:44px 0}
+  .problem-light,.included,.onesize,.excuses,.testimonials,.transform-section,.bottom-cta{padding:44px 0}
+  .testi-grid{grid-template-columns:1fr;gap:14px}
+  .included__grid{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar__text"><span class="top-bar__dot"></span>Starting 4th May • Limited Spots</div>
+  <a href="javascript:void(0);" onclick="openBookingModal()" class="top-bar__btn">Book A Call</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__eyebrow" data-reveal>16 Week Transformation Challenge</div>
+    <h1 class="hero__title" data-reveal>Summer Shred</h1>
+    <div class="hero__sub-title" data-reveal>Transform This Summer And Win <span style="color:var(--gold)">$3,000 USD</span></div>
+    <div class="video-wrap" data-reveal>
+      <div class="wistia_responsive_padding" style="padding:177.78% 0 0 0;position:relative;">
+        <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+          <div class="wistia_embed wistia_async_zqykcwwyzs videoFoam=true" style="height:100%;position:relative;width:100%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__close-line" data-reveal>Sign Up Closes <strong>30th April</strong></div>
+    <div style="margin-top:18px" data-reveal>
+      <a href="javascript:void(0);" onclick="openCheckout()" class="hero__cta">Secure Your Spot From $99/Week</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2025 CHAMPION BAND -->
+<div class="section-band">
+  <h2>2025 Champion &ldquo;Life Changing&rdquo;</h2>
+</div>
+
+<!-- CHAMPION SECTION -->
+<section class="champion">
+  <div class="container">
+    <div class="champion__grid">
+      <div class="champion__images">
+        <img src="https://via.placeholder.com/500x650/1a1a1a/FFD60A?text=Laurence+Before" alt="Laurence before">
+        <img src="https://via.placeholder.com/500x650/1a1a1a/FFD60A?text=Laurence+After" alt="Laurence after">
+      </div>
+      <div>
+        <div class="champion__quote">
+          <p>&ldquo;At first I was in shock, then it slowly sunk in and I couldn&rsquo;t stop smiling! I knew I&rsquo;d accomplished something I&rsquo;d been putting off for a long time, and the fact that it was in a competition was recognition of the sheer hard work I&rsquo;d put in over the past 16 weeks. It means everything to me.&rdquo;</p>
+          <cite>&mdash; Laurence</cite>
+        </div>
+        <div class="champion__body">
+          <p>Laurence was <strong>232lbs</strong> and didn't recognise the man looking back at him in the mirror. Clothes that used to fit were not anymore. He was relying heavily on food and drink just to manage stress.</p>
+          <p>He knew he needed to do something about it, he just kept putting it off. <strong>Then he stopped waiting.</strong></p>
+          <p>16 weeks later, <strong>50 pounds lost</strong>, personal running records broken, and a massive cash prize in his pocket.</p>
+          <p>But when we spoke to him after the challenge, the massive cash prize wasn't even mentioned...</p>
+          <div class="champion__second-quote">
+            <p>&ldquo;I can't operate in the day without a morning run. I love to train harder than ever. I see myself differently. I see the world differently too. Coach Danny and Physique Academy have changed my life!&rdquo;</p>
+          </div>
+          <p style="color:#fff">That's what this challenge actually does. The weight comes off, the confidence comes back, and the man you've been putting off becoming finally shows up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIPE -->
+<div class="cta-stripe">
+  <div class="cta-stripe__small">Sign Up Closes 30th April</div>
+  <a href="javascript:void(0);" onclick="openCheckout()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+</div>
+
+<!-- CHALLENGE STARTS BAND -->
+<div class="section-band">
+  <h2>Challenge Starts 4th May</h2>
+  <p>Now is the best time to get in shape for summer</p>
+</div>
+
+<!-- 2ND / 3RD PLACE -->
+<section class="places">
+  <div class="container">
+    <div class="places__grid">
+      <div class="place-card">
+        <div class="place-card__title">2nd Place &mdash; Fraser</div>
+        <div class="place-card__images">
+          <img src="https://via.placeholder.com/400x500/1a1a1a/FFD60A?text=Fraser+Before" alt="Fraser before">
+          <img src="https://via.placeholder.com/400x500/1a1a1a/FFD60A?text=Fraser+After" alt="Fraser after">
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card__title">3rd Place &mdash; Ulrich</div>
+        <div class="place-card__images">
+          <img src="https://via.placeholder.com/400x500/1a1a1a/FFD60A?text=Ulrich+Before" alt="Ulrich before">
+          <img src="https://via.placeholder.com/400x500/1a1a1a/FFD60A?text=Ulrich+After" alt="Ulrich after">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THIS SUMMER BAND -->
+<div class="section-band">
+  <h2>This Summer Doesn&rsquo;t Have To Look Like The Last One</h2>
+</div>
+
+<!-- PROBLEM LIGHT -->
+<section class="problem-light">
+  <div class="container">
+    <p class="lead">Be honest with yourself for a second.</p>
+    <p>Are you avoiding the beach because of how you feel in your body?</p>
+    <p>Do you find yourself saying no to things you actually want to do?</p>
+    <p>Are you tired by midday, relying on caffeine and convenience food just to get through it?</p>
+    <p>When your kids want to run around, are you already looking for a reason to sit it out?</p>
+    <p class="italic-line">That's not just a fitness problem. That's your quality of life.</p>
+    <p>The men who did something about it last year didn't have better genetics or more time. They just made a decision and had the right people behind them.</p>
+    <p style="font-weight:800;margin-top:18px">This is your chance to do the same.</p>
+  </div>
+</section>
+
+<!-- CTA STRIPE -->
+<div class="cta-stripe">
+  <div class="cta-stripe__small">Limited Spots Available</div>
+  <a href="javascript:void(0);" onclick="openCheckout()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included">
+  <div class="container">
+    <h2>What&rsquo;s Included</h2>
+    <div class="included__grid">
+      <div class="included__item">100% customised nutrition programme</div>
+      <div class="included__item">Full 16-week custom training plan</div>
+      <div class="included__item">A dedicated coach matched to your goals and training style</div>
+      <div class="included__item">Weekly video check-ins with feedback and programme adjustments</div>
+      <div class="included__item">Fat loss, muscle gain, performance and endurance plans available</div>
+      <div class="included__item">Flexible dieting or structured meal plan</div>
+      <div class="included__item">Supplement guidance</div>
+      <div class="included__item">WhatsApp support throughout</div>
+      <div class="included__item">Zoom calls whenever you need them</div>
+      <div class="included__item">Community group access</div>
+      <div class="included__item">Mental health support via a trusted therapist</div>
+    </div>
+  </div>
+</section>
+
+<!-- ONE SIZE BAND -->
+<div class="section-band">
+  <h2>One Size Does Not Fit All</h2>
+  <p>Whether you bodybuild, calisthenics, CrossFit, or Hyrox training, we have a coach for you</p>
+</div>
+
+<!-- ONE SIZE -->
+<section class="onesize">
+  <div class="container">
+    <div class="onesize__image">
+      <img src="https://via.placeholder.com/760x420/0a0a0a/FFD60A?text=One+Size+Does+Not+Fit+All" alt="One size does not fit all">
+    </div>
+    <div class="onesize__copy">
+      <p>Most programmes fail for the same reason. They ask you to do things you hate, eat in a way that doesn't suit you, and fit your life around a plan instead of the other way around.</p>
+      <p><strong>We do it differently.</strong></p>
+      <p>You will get a coach based on your lifestyle and training preferences, building your training and nutrition around your lifestyle, your preferences, and what you can realistically sustain.</p>
+      <p><strong>Not just for 16 weeks, but beyond it.</strong></p>
+      <p>The goal isn't to get you to the finish line. It's to make sure you never need to start over again.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIPE -->
+<div class="cta-stripe">
+  <div class="cta-stripe__small">Limited Spots Available</div>
+  <a href="javascript:void(0);" onclick="openCheckout()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+</div>
+
+<!-- EXCUSES -->
+<section class="excuses">
+  <div class="container">
+    <h2>Your Excuses Are Valid.<br><em>They Just Aren&rsquo;t Good Enough</em></h2>
+    <div class="excuse-grid">
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openExcuseImg(this)">
+          <img src="https://via.placeholder.com/500x600/1a1a1a/FFD60A?text=Ross+45" alt="Ross 45">
+        </div>
+        <div class="excuse-card__text">
+          <strong class="name">Ross, 45</strong>
+          <p>Was raising two kids alone and caring for his father through late-stage Parkinson&rsquo;s.</p>
+          <p class="q">&ldquo;Most men would have come up with plenty of excuses in this situation. Ross used it as a reason. <strong class="lost">He lost 50lbs.</strong>&rdquo;</p>
+        </div>
+      </div>
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openExcuseImg(this)">
+          <img src="https://via.placeholder.com/500x600/1a1a1a/FFD60A?text=Jonathan" alt="Jonathan">
+        </div>
+        <div class="excuse-card__text">
+          <strong class="name">Jonathan</strong>
+          <p>Hadn&rsquo;t looked at himself in the mirror with his shirt off in over 4 years.</p>
+          <p class="q">&ldquo;It was costing him his confidence. He quietly stopped pursuing. <strong class="lost">He lost 49lbs. He got it all back.</strong>&rdquo;</p>
+        </div>
+      </div>
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openExcuseImg(this)">
+          <img src="https://via.placeholder.com/500x600/1a1a1a/FFD60A?text=Sean+46" alt="Sean 46">
+        </div>
+        <div class="excuse-card__text">
+          <strong class="name">Sean, 46</strong>
+          <p>Had been consistently training for 13 years but had nothing to show for it.</p>
+          <p class="q">&ldquo;Despite being a father of 3 kids and working long hours on his business, <strong class="lost">he lost 58lbs.</strong>&rdquo;</p>
+        </div>
+      </div>
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openExcuseImg(this)">
+          <img src="https://via.placeholder.com/500x600/1a1a1a/FFD60A?text=Marc+53" alt="Marc 53">
+        </div>
+        <div class="excuse-card__text">
+          <strong class="name">Marc, 53</strong>
+          <p>Thought it was his age and hadn&rsquo;t run a single mile in his life.</p>
+          <p class="q">&ldquo;Six months later, he placed 3rd in his age group at a 5K and completed a half marathon. <strong class="lost">He lost 45lbs.</strong>&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIPE -->
+<div class="cta-stripe">
+  <div class="cta-stripe__small">Limited Spots Available</div>
+  <a href="javascript:void(0);" onclick="openCheckout()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+</div>
+
+<!-- VIDEO TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <h2>Hear It Directly From Men Who Got Tired Of Waiting And Did Something About It</h2>
+    <p class="testimonials__sub">Busy schedules. Demanding jobs. Young kids. Every reason not to start. They did it anyway.</p>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="testi-card__thumb"></div><div class="testi-card__body"><div class="testi-card__name">Michael L</div><div class="testi-card__result">Lost 50lbs</div></div></div>
+      <div class="testi-card"><div class="testi-card__thumb"></div><div class="testi-card__body"><div class="testi-card__name">Tyrone E</div><div class="testi-card__result">Lost 50lbs</div></div></div>
+      <div class="testi-card"><div class="testi-card__thumb"></div><div class="testi-card__body"><div class="testi-card__name">Ramirez H</div><div class="testi-card__result">Lost 50lbs</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATIONS -->
+<section class="transform-section">
+  <div class="container">
+    <h2>The difference between these men and the ones still stuck...<br><em>They took action.</em></h2>
+    <div class="transform-grid">
+      <div class="transform-card" onclick="openLightbox(0)"><img src="https://via.placeholder.com/300x375/eee/333?text=Transformation+1" alt="Transformation 1"><div class="transform-card__name">Lost 50lbs</div></div>
+      <div class="transform-card" onclick="openLightbox(1)"><img src="https://via.placeholder.com/300x375/eee/333?text=Transformation+2" alt="Transformation 2"><div class="transform-card__name">Lost 45lbs</div></div>
+      <div class="transform-card" onclick="openLightbox(2)"><img src="https://via.placeholder.com/300x375/eee/333?text=Transformation+3" alt="Transformation 3"><div class="transform-card__name">Lost 60lbs</div></div>
+      <div class="transform-card" onclick="openLightbox(3)"><img src="https://via.placeholder.com/300x375/eee/333?text=Transformation+4" alt="Transformation 4"><div class="transform-card__name">Lost 55lbs</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIPE -->
+<div class="cta-stripe">
+  <div class="cta-stripe__small">Limited Spots Available</div>
+  <a href="javascript:void(0);" onclick="openCheckout()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+</div>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="bottom-cta__eyebrow">Got Questions?</div>
+  <h2>Book A Free Call To Chat</h2>
+  <a href="javascript:void(0);" onclick="openBookingModal()" class="bottom-cta__btn">Let&rsquo;s Chat About It</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div><img src="https://physique-academy.s3.amazonaws.com/general/PA-Logo-Green-White.png" alt="Physique Academy"></div>
+  <p>&copy; 2026 Physique Academy. All rights reserved.</p>
+  <p>Results may vary. Individual outcomes depend on effort, adherence, and starting point.</p>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="booking-overlay" id="bookingModal">
+  <div class="booking-modal">
+    <button class="booking-modal-close" onclick="closeBookingModal()" aria-label="Close"></button>
+    <div class="booking-modal-content">
+      <div style="background:#f8f9fa;color:#333;padding:1rem;text-align:center;font-family:'Inter',sans-serif">
+        <div style="font-size:clamp(0.9rem,3vw,1.4rem);font-weight:600;line-height:1.3">
+          <strong>Book your <span style="color:#F5B800;font-weight:800">Free Call</span> in under <span style="color:#F5B800;font-weight:800">60 seconds</span></strong>
+        </div>
+      </div>
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/zq9rJ1MN23szkjo199Wm"
+              style="width:100%;border:none;overflow:hidden;min-height:600px;"
+              scrolling="no"
+              id="summer-shred-booking-iframe"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+<script>
+function openBookingModal(){document.getElementById('bookingModal').classList.add('active');document.body.style.overflow='hidden'}
+function closeBookingModal(){document.getElementById('bookingModal').classList.remove('active');document.body.style.overflow=''}
+document.getElementById('bookingModal').addEventListener('click',function(e){if(e.target===this)closeBookingModal()});
+
+// Stripe checkout placeholder — Aaron will provide URL
+function openCheckout(){
+  if(window.STRIPE_CHECKOUT_URL){window.location.href=window.STRIPE_CHECKOUT_URL}
+  else{openBookingModal()}
+}
+
+// Transformations lightbox
+const tImgs=document.querySelectorAll('.transform-card img');
+const imgs=Array.from(tImgs).map(i=>({src:i.src,alt:i.alt}));
+let lbIdx=0;
+function openLightbox(i){lbIdx=i;document.getElementById('lb-img').src=imgs[i].src;document.getElementById('lb-img').alt=imgs[i].alt;document.getElementById('lightbox').style.display='flex';document.body.style.overflow='hidden'}
+function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}
+function openExcuseImg(el){const img=el.querySelector('img');document.getElementById('lb-img').src=img.src;document.getElementById('lb-img').alt=img.alt;document.getElementById('lightbox').style.display='flex';document.body.style.overflow='hidden'}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox()});
+document.addEventListener('keydown',function(e){
+  if(document.getElementById('bookingModal').classList.contains('active')){if(e.key==='Escape')closeBookingModal();return}
+  if(document.getElementById('lightbox').style.display==='flex'){if(e.key==='Escape')closeLightbox()}
+});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.06});
+document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
