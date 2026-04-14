@@ -67,8 +67,10 @@ article:has(.pa-summer-shred),
 .pa-summer-shred .ss-stripe__btn{display:inline-block;background:#000;color:var(--gold);font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:16px 36px;border-radius:8px;cursor:pointer;border:none;font-family:'Inter',sans-serif}
 
 /* HERO */
-.pa-summer-shred .ss-hero{background:var(--black);padding:60px 0 28px;text-align:center;position:relative;overflow:hidden}
-.pa-summer-shred .ss-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,214,10,0.15),transparent 60%);pointer-events:none}
+.pa-summer-shred .ss-hero{background:#000;padding:0;text-align:center;position:relative;overflow:hidden}
+.pa-summer-shred .ss-hero-bg{position:relative;min-height:620px;background:url('https://physique-academy.s3.amazonaws.com/summer-shred/george-summer-shred-hero.webp') center/cover no-repeat;display:flex;align-items:center;justify-content:center;padding:70px 0 60px}
+.pa-summer-shred .ss-hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.35) 40%,rgba(0,0,0,0.75) 100%);pointer-events:none}
+.pa-summer-shred .ss-hero-video{background:#000;padding:40px 0 28px}
 .pa-summer-shred .ss-hero__inner{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 20px}
 .pa-summer-shred .ss-hero__eyebrow{display:inline-block;background:var(--gold-grad);color:#000;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:18px}
 .pa-summer-shred .ss-hero__title{font-size:clamp(40px,7vw,84px);font-weight:900;line-height:.95;letter-spacing:-.02em;margin-bottom:8px;text-transform:uppercase;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 30px rgba(255,214,10,0.25)}
@@ -217,19 +219,25 @@ article:has(.pa-summer-shred),
 
 <!-- HERO -->
 <section class="ss-hero">
-  <div class="ss-hero__inner">
-    <div class="ss-hero__eyebrow">16 Week Transformation Challenge</div>
-    <h1 class="ss-hero__title">Summer Shred</h1>
-    <div class="ss-hero__sub">Transform This Summer And Win <span>$3,000 USD</span></div>
-    <div class="ss-video">
-      <div class="wistia_responsive_padding" style="padding:177.78% 0 0 0;position:relative;">
-        <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-          <div class="wistia_embed wistia_async_zqykcwwyzs videoFoam=true" style="height:100%;position:relative;width:100%"></div>
+  <div class="ss-hero-bg">
+    <div class="ss-hero__inner">
+      <div class="ss-hero__eyebrow">16 Week Transformation Challenge</div>
+      <h1 class="ss-hero__title">Summer Shred</h1>
+      <div class="ss-hero__sub">Transform This Summer And Win <span>$3,000 USD</span></div>
+    </div>
+  </div>
+  <div class="ss-hero-video">
+    <div class="ss-hero__inner">
+      <div class="ss-video">
+        <div class="wistia_responsive_padding" style="padding:177.78% 0 0 0;position:relative;">
+          <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+            <div class="wistia_embed wistia_async_zqykcwwyzs videoFoam=true" style="height:100%;position:relative;width:100%"></div>
+          </div>
         </div>
       </div>
+      <div class="ss-hero__close-line">Sign Up Closes <strong>30th April</strong></div>
+      <div><a href="javascript:void(0);" onclick="openSummerShredCheckout()" class="ss-hero__cta">Secure Your Spot From $99/Week</a></div>
     </div>
-    <div class="ss-hero__close-line">Sign Up Closes <strong>30th April</strong></div>
-    <div><a href="javascript:void(0);" onclick="openSummerShredCheckout()" class="ss-hero__cta">Secure Your Spot From $99/Week</a></div>
   </div>
 </section>
 
