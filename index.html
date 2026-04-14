@@ -82,6 +82,22 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .section-band--lg h2{font-size:clamp(28px,4.5vw,46px);letter-spacing:.02em}
 .section-band--lg p{font-size:clamp(13px,1.5vw,16px);margin-top:8px;letter-spacing:.04em;text-transform:uppercase}
 
+/* 2025 CHAMPION BAND */
+.champion-band{background:#0a0a0a;padding:48px 20px;text-align:center;position:relative;overflow:hidden;border-top:4px solid var(--gold);border-bottom:4px solid var(--gold)}
+.champion-band::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 24px,rgba(255,214,10,0.04) 24px 25px);pointer-events:none}
+.champion-band::after{content:'';position:absolute;left:-10%;right:-10%;top:50%;height:2px;background:linear-gradient(90deg,transparent,rgba(255,214,10,0.3) 30%,rgba(255,214,10,0.3) 70%,transparent);transform:translateY(-50%);pointer-events:none}
+.champion-band__inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.champion-band__trophy{width:56px;height:56px;border-radius:50%;background:var(--gold-grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 4px rgba(255,214,10,0.15)}
+.champion-band__trophy svg{width:30px;height:30px;color:#0a0a0a}
+.champion-band__year{font-family:'Oswald',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:700;color:#fff;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.champion-band__quote{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.5vw,38px);font-weight:600;color:var(--gold);letter-spacing:.02em;line-height:1;font-style:italic}
+@media(max-width:480px){
+  .champion-band{padding:32px 16px}
+  .champion-band__inner{gap:14px}
+  .champion-band__trophy{width:44px;height:44px}
+  .champion-band__trophy svg{width:24px;height:24px}
+}
+
 /* CHAMPION SECTION — zigzag */
 .champion{background:#fff;padding:60px 0;color:var(--text)}
 .champion .container{max-width:1100px;margin:0 auto;padding:0 20px}
@@ -281,9 +297,15 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 </section>
 
 <!-- 2025 CHAMPION BAND -->
-<div class="section-band">
-  <h2>2025 Champion &ldquo;Life Changing&rdquo;</h2>
-</div>
+<section class="champion-band">
+  <div class="champion-band__inner">
+    <div class="champion-band__trophy">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 3h10v2h3v4c0 2.21-1.79 4-4 4h-.08A5.002 5.002 0 0 1 13 16.9V19h3v2H8v-2h3v-2.1A5.002 5.002 0 0 1 7.08 13H7c-2.21 0-4-1.79-4-4V5h4V3zm10 4V5H7v2c0 2.21 1.79 4 4 4h2c2.21 0 4-1.79 4-4z"/></svg>
+    </div>
+    <div class="champion-band__year">2025 Champion</div>
+    <div class="champion-band__quote">&ldquo;Life Changing&rdquo;</div>
+  </div>
+</section>
 
 <!-- CHAMPION SECTION -->
 <section class="champion">
