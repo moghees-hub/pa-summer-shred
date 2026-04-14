@@ -132,12 +132,14 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .place-card__images img{width:100%;height:auto;border-radius:8px;display:block}
 
 /* PROBLEM / EXCUSES BLOCK (light) */
-.problem-light{background:var(--white);padding:56px 0;text-align:center}
-.problem-light .container{max-width:760px;margin:0 auto;padding:0 20px}
-.problem-light h2{font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-.02em;color:var(--text);line-height:1.15;margin-bottom:24px}
+.problem-light{background:var(--white);padding:56px 0}
+.problem-light .container{max-width:1100px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.problem-light__copy{text-align:left}
+.problem-light__img img{width:100%;height:auto;border-radius:14px;display:block}
 .problem-light p{font-size:16px;color:#000;font-weight:600;line-height:1.7;margin-bottom:14px}
-.problem-light p.lead{font-size:18px;font-weight:800}
+.problem-light p.lead{font-size:20px;font-weight:800}
 .problem-light p.italic-line{font-style:italic;font-weight:700;color:#000;margin:18px 0}
+@media(max-width:768px){.problem-light .container{grid-template-columns:1fr;gap:28px}}
 
 /* WHAT'S INCLUDED */
 .included{background:#fff;padding:60px 0;color:#000}
@@ -400,14 +402,19 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 <!-- PROBLEM LIGHT -->
 <section class="problem-light">
   <div class="container">
-    <p class="lead">Be honest with yourself for a second.</p>
-    <p>Are you avoiding the beach because of how you feel in your body?</p>
-    <p>Do you find yourself saying no to things you actually want to do?</p>
-    <p>Are you tired by midday, relying on caffeine and convenience food just to get through it?</p>
-    <p>When your kids want to run around, are you already looking for a reason to sit it out?</p>
-    <p class="italic-line">That's not just a fitness problem. That's your quality of life.</p>
-    <p>The men who did something about it last year didn't have better genetics or more time. They just made a decision and had the right people behind them.</p>
-    <p style="font-weight:800;margin-top:18px">This is your chance to do the same.</p>
+    <div class="problem-light__copy">
+      <p class="lead">Be honest with yourself for a second.</p>
+      <p>Are you avoiding the beach because of how you feel in your body?</p>
+      <p>Do you find yourself saying no to things you actually want to do?</p>
+      <p>Are you tired by midday, relying on caffeine and convenience food just to get through it?</p>
+      <p>When your kids want to run around, are you already looking for a reason to sit it out?</p>
+      <p class="italic-line">That's not just a fitness problem. That's your quality of life.</p>
+      <p>The men who did something about it last year didn't have better genetics or more time. They just made a decision and had the right people behind them.</p>
+      <p style="font-weight:800;margin-top:18px">This is your chance to do the same.</p>
+    </div>
+    <div class="problem-light__img">
+      <img src="https://physique-academy.s3.amazonaws.com/summer-shred/george-holding-bar.webp" alt="George training" loading="lazy">
+    </div>
   </div>
 </section>
 
