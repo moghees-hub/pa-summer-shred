@@ -60,6 +60,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .hero__slash-sub-inner{display:inline-block;transform:skew(8deg);font-family:'Oswald',sans-serif;font-size:clamp(11px,1.5vw,14px);font-weight:600;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
 .hero__bottom-line{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.6vw,44px);font-weight:600;color:#fff;letter-spacing:.04em;text-transform:uppercase;line-height:1.15;text-align:center;text-shadow:0 2px 18px rgba(0,0,0,0.6)}
 .hero__bottom-line span{color:var(--gold);font-weight:700}
+.hero__bottom-line .hero__bl-break{display:none}
 .hero__video-wrap{background:#000;padding:40px 0 28px}
 .hero .container{position:relative;z-index:1;width:100%;max-width:980px;margin:0 auto;padding:0 20px}
 .hero__eyebrow{display:inline-block;background:var(--gold-grad);color:#000;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:18px}
@@ -201,6 +202,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   .hero__bg{min-height:600px;padding:90px 0 50px}
   .hero__title{font-size:54px;line-height:.92}
   .hero__slash-inner{font-size:46px}
+  .hero__bottom-line .hero__bl-break{display:block;height:0;width:100%}
   .hero__sub-title{font-size:13px;letter-spacing:.14em}
   .hero__headline{font-size:22px;margin:24px auto 20px}
   .champion__grid{grid-template-columns:1fr;gap:28px}
@@ -243,7 +245,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
       <div class="hero__slash-sub"><span class="hero__slash-sub-inner">16 Week Transformation Challenge</span></div>
     </div>
     <div class="hero__poster-bottom" data-reveal>
-      <div class="hero__bottom-line">Transform This Summer<br>And Win <span>$3,000 USD</span></div>
+      <div class="hero__bottom-line">Transform This Summer <span class="hero__bl-break"></span>And Win <span>$3,000 USD</span></div>
     </div>
   </div>
   <div class="hero__video-wrap">
