@@ -83,6 +83,9 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .champion{background:#fff;padding:60px 0;color:var(--text)}
 .champion .container{max-width:1100px;margin:0 auto;padding:0 20px}
 .champion__row{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-bottom:36px}
+.champion__row .champion__text-col{align-self:center}
+.champion__row img,.place-card__images img{cursor:pointer;transition:transform .25s}
+.champion__row img:hover,.place-card__images img:hover{transform:scale(1.02)}
 .champion__row--reverse .champion__img-col{order:2}
 .champion__row--reverse .champion__text-col{order:1}
 .champion__row img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);display:block}
@@ -285,7 +288,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
     <!-- Row 1: image left, quote right -->
     <div class="champion__row">
       <div class="champion__img-col">
-        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-01.webp" alt="Laurence transformation" loading="lazy">
+        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-01.webp" alt="Laurence transformation" loading="lazy" onclick="openImg(this)">
       </div>
       <div class="champion__text-col">
         <div class="champion__quote">
@@ -297,7 +300,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
     <!-- Row 2: text left, image right -->
     <div class="champion__row champion__row--reverse">
       <div class="champion__img-col">
-        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-02.webp" alt="Laurence transformation" loading="lazy">
+        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-02.webp" alt="Laurence transformation" loading="lazy" onclick="openImg(this)">
       </div>
       <div class="champion__text-col">
         <p>Laurence was <strong>232lbs</strong> and didn't recognise the man looking back at him in the mirror. Clothes that used to fit were not anymore. He was relying heavily on food and drink just to manage stress.</p>
@@ -308,7 +311,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
     <!-- Row 3: image left, text + second quote + CTA right -->
     <div class="champion__row">
       <div class="champion__img-col">
-        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-03.webp" alt="Laurence transformation" loading="lazy">
+        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-03.webp" alt="Laurence transformation" loading="lazy" onclick="openImg(this)">
       </div>
       <div class="champion__text-col">
         <p>But when we spoke to him after the challenge, the massive cash prize wasn't even mentioned...</p>
@@ -343,17 +346,17 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
       <div class="place-card">
         <div class="place-card__title">2nd Place &mdash; Fraser</div>
         <div class="place-card__images">
-          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fraser-01.webp" alt="Fraser" loading="lazy">
-          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fraser-02.webp" alt="Fraser" loading="lazy">
-          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fraser-03.webp" alt="Fraser" loading="lazy">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fraser-01.webp" alt="Fraser" loading="lazy" onclick="openImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fraser-02.webp" alt="Fraser" loading="lazy" onclick="openImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fraser-03.webp" alt="Fraser" loading="lazy" onclick="openImg(this)">
         </div>
       </div>
       <div class="place-card">
         <div class="place-card__title">3rd Place &mdash; Ulrich</div>
         <div class="place-card__images">
-          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/ulrich-01.webp" alt="Ulrich" loading="lazy">
-          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/ulrich-02.webp" alt="Ulrich" loading="lazy">
-          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/ulrich-03.webp" alt="Ulrich" loading="lazy">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/ulrich-01.webp" alt="Ulrich" loading="lazy" onclick="openImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/ulrich-02.webp" alt="Ulrich" loading="lazy" onclick="openImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/ulrich-03.webp" alt="Ulrich" loading="lazy" onclick="openImg(this)">
         </div>
       </div>
     </div>
@@ -635,6 +638,14 @@ function openExcuseImg(el){
   document.getElementById('lb-img').src=img.src;
   document.getElementById('lb-img').alt=img.alt;
   document.getElementById('lb-name').textContent=img.alt;
+  document.getElementById('lb-counter').textContent='';
+  document.getElementById('lightbox').style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function openImg(img){
+  document.getElementById('lb-img').src=img.src;
+  document.getElementById('lb-img').alt=img.alt;
+  document.getElementById('lb-name').textContent=img.alt||'';
   document.getElementById('lb-counter').textContent='';
   document.getElementById('lightbox').style.display='flex';
   document.body.style.overflow='hidden';
