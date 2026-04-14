@@ -122,11 +122,12 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .champion__cta-wrap{text-align:center;margin-top:24px}
 
 /* PLACES (2nd / 3rd) */
-.places{background:#0a0a0a;padding:50px 0 60px;color:#fff}
+.places{background:#fff;padding:50px 0 60px;color:var(--text)}
 .places .container{max-width:1100px;margin:0 auto;padding:0 20px}
 .places__grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
-.place-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden}
-.place-card__title{padding:16px 20px;font-size:18px;font-weight:900;color:var(--gold);letter-spacing:.04em;text-align:center;border-bottom:1px solid rgba(255,255,255,0.06)}
+.place-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.place-card__title{padding:16px 20px;font-size:18px;font-weight:900;color:var(--text);letter-spacing:.04em;text-align:center;border-bottom:1px solid var(--border)}
+.place-card__title strong{color:var(--gold-2)}
 .place-card__images{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px}
 .place-card__images img:first-child{grid-column:1/-1}
 .place-card__images img{width:100%;height:auto;border-radius:8px;display:block}
