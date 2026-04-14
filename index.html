@@ -151,7 +151,11 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .problem-light p{font-size:16px;color:rgba(255,255,255,0.85);font-weight:500;line-height:1.7;margin-bottom:14px}
 .problem-light p.lead{font-size:20px;font-weight:800;color:#fff}
 .problem-light p.italic-line{font-style:italic;font-weight:700;color:var(--gold);margin:18px 0}
-@media(max-width:768px){.problem-light .container{grid-template-columns:1fr;gap:28px}.problem-light__img{min-height:260px}}
+@media(max-width:768px){
+  .problem-light .container{grid-template-columns:1fr;gap:28px}
+  .problem-light__img{min-height:0;position:static}
+  .problem-light__img img{position:static;height:auto;object-fit:contain}
+}
 
 /* WHAT'S INCLUDED */
 .included{background:#fff;padding:60px 0;color:#000}
