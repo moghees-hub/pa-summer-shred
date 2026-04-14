@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Summer Shred – 16 Week Transformation Challenge | Physique Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <script src="https://fast.wistia.com/player.js" async></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -23,9 +23,12 @@
   --text-secondary:#444;
   --red:#e74c3c;
   --green-num:#2ecc40;
+  --display:'Oswald','Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+.hero__title,.hero__sub-title,.hero__headline,.section-band h2,.champion h2,.included h2,.excuses h2,.testimonials h2,.transform-section h2,.bottom-cta h2,.place-card__title,.cta-stripe__btn,.hero__cta,.bottom-cta__btn,.top-bar__btn{font-family:var(--display);letter-spacing:.02em}
+.hero__title{letter-spacing:-.01em}
 
 /* STICKY TOP BAR */
 .top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:2px solid var(--gold);padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 1px 12px rgba(0,0,0,0.2)}
