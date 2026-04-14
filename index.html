@@ -88,14 +88,13 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .section-band--lg p{font-size:clamp(13px,1.5vw,16px);margin-top:8px;letter-spacing:.04em;text-transform:uppercase}
 
 /* 2025 CHAMPION BAND */
-.champion-band{background:#0a0a0a;padding:48px 20px;text-align:center;position:relative;overflow:hidden;border-top:4px solid var(--gold);border-bottom:4px solid var(--gold)}
-.champion-band::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 24px,rgba(255,214,10,0.04) 24px 25px);pointer-events:none}
-.champion-band::after{content:'';position:absolute;left:-10%;right:-10%;top:50%;height:2px;background:linear-gradient(90deg,transparent,rgba(255,214,10,0.3) 30%,rgba(255,214,10,0.3) 70%,transparent);transform:translateY(-50%);pointer-events:none}
-.champion-band__inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
-.champion-band__trophy{width:56px;height:56px;border-radius:50%;background:var(--gold-grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 4px rgba(255,214,10,0.15)}
-.champion-band__trophy svg{width:30px;height:30px;color:#0a0a0a}
-.champion-band__year{font-family:'Oswald',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:700;color:#fff;letter-spacing:.04em;text-transform:uppercase;line-height:1}
-.champion-band__quote{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.5vw,38px);font-weight:600;color:var(--gold);letter-spacing:.02em;line-height:1;font-style:italic}
+.champion-band{background:var(--gold-grad);padding:36px 20px;text-align:center;position:relative;overflow:hidden}
+.champion-band::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 24px,rgba(0,0,0,0.04) 24px 25px);pointer-events:none}
+.champion-band__inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.champion-band__trophy{width:54px;height:54px;border-radius:50%;background:#0a0a0a;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 4px rgba(0,0,0,0.08)}
+.champion-band__trophy svg{width:28px;height:28px;color:var(--gold)}
+.champion-band__year{font-family:'Oswald',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:700;color:#000;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.champion-band__quote{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.5vw,38px);font-weight:600;color:#000;letter-spacing:.02em;line-height:1;font-style:italic;opacity:.82}
 @media(max-width:480px){
   .champion-band{padding:32px 16px}
   .champion-band__inner{gap:14px}
