@@ -68,8 +68,8 @@ article:has(.pa-summer-shred),
 
 /* HERO */
 .pa-summer-shred .ss-hero{background:#000;padding:0;text-align:center;position:relative;overflow:hidden}
-.pa-summer-shred .ss-hero-bg{position:relative;min-height:620px;background:url('https://physique-academy.s3.amazonaws.com/summer-shred/george-summer-shred-hero.webp') center/cover no-repeat;display:flex;align-items:center;justify-content:center;padding:70px 0 60px}
-.pa-summer-shred .ss-hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.35) 40%,rgba(0,0,0,0.75) 100%);pointer-events:none}
+.pa-summer-shred .ss-hero-bg{position:relative;min-height:760px;background:url('https://physique-academy.s3.amazonaws.com/summer-shred/george-summer-shred-hero.webp') center top/cover no-repeat;display:flex;align-items:flex-end;justify-content:center;padding:70px 0 70px}
+.pa-summer-shred .ss-hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.15) 30%,rgba(0,0,0,0.55) 70%,rgba(0,0,0,0.9) 100%);pointer-events:none}
 .pa-summer-shred .ss-hero-video{background:#000;padding:40px 0 28px}
 .pa-summer-shred .ss-hero__inner{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 20px}
 .pa-summer-shred .ss-hero__eyebrow{display:inline-block;background:var(--gold-grad);color:#000;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:18px}
@@ -187,12 +187,13 @@ article:has(.pa-summer-shred),
 .pa-summer-shred .ss-modal-close::before{transform:rotate(45deg)}
 .pa-summer-shred .ss-modal-close::after{transform:rotate(-45deg)}
 .pa-summer-shred .ss-modal-content{flex:1;overflow-y:auto}
-.pa-summer-shred .ss-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:100000;display:none;align-items:center;justify-content:center;padding:20px}
-.pa-summer-shred .ss-lightbox img{max-width:100%;max-height:88vh;border-radius:8px}
-.pa-summer-shred .ss-lightbox-close{position:absolute;top:20px;right:20px;width:44px;height:44px;background:rgba(255,255,255,0.1);border:none;border-radius:50%;cursor:pointer;color:#fff;font-size:24px}
+.pa-summer-shred .ss-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.94);backdrop-filter:blur(12px);z-index:100000;display:none;align-items:center;justify-content:center;padding:20px}
+.pa-summer-shred .ss-lb-btn{position:absolute;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;font-family:inherit}
+.pa-summer-shred .ss-lb-btn:hover{background:rgba(255,214,10,0.25)}
 
 /* MOBILE */
 @media(max-width:768px){
+  .pa-summer-shred .ss-hero-bg{min-height:520px;padding:50px 0 50px}
   .pa-summer-shred .ss-hero__title{font-size:54px;line-height:.92}
   .pa-summer-shred .ss-champion-grid,
   .pa-summer-shred .ss-places-grid,
@@ -477,8 +478,14 @@ article:has(.pa-summer-shred),
 
 <!-- LIGHTBOX -->
 <div class="ss-lightbox" id="ss-lightbox">
-  <button class="ss-lightbox-close" onclick="closeSummerShredLightbox()">&times;</button>
-  <img id="ss-lb-img" src="" alt="">
+  <button onclick="closeSummerShredLightbox()" class="ss-lb-btn" style="top:20px;right:20px;width:42px;height:42px;border-radius:10px;font-size:18px">&#10005;</button>
+  <button onclick="ssPrevImage()" class="ss-lb-btn" style="left:20px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;font-size:22px">&#8249;</button>
+  <button onclick="ssNextImage()" class="ss-lb-btn" style="right:20px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;font-size:22px">&#8250;</button>
+  <div style="max-width:860px;width:100%;text-align:center">
+    <img id="ss-lb-img" src="" alt="" style="max-width:100%;max-height:82vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,0.8);object-fit:contain">
+    <p id="ss-lb-name" style="margin-top:14px;font-size:15px;font-weight:700;color:#fff"></p>
+    <p id="ss-lb-counter" style="font-size:12px;color:#999;margin-top:4px"></p>
+  </div>
 </div>
 
 </div>
@@ -489,14 +496,29 @@ function openSummerShredBookingModal(){document.getElementById('ss-bookingModal'
 function closeSummerShredBookingModal(){document.getElementById('ss-bookingModal').classList.remove('ss-active');document.body.style.overflow=''}
 document.getElementById('ss-bookingModal').addEventListener('click',function(e){if(e.target===this)closeSummerShredBookingModal()});
 function openSummerShredCheckout(){if(window.SS_STRIPE_URL){window.location.href=window.SS_STRIPE_URL}else{openSummerShredBookingModal()}}
-const ssTImgs=document.querySelectorAll('.pa-summer-shred .ss-transform-card img');
-const ssImgs=Array.from(ssTImgs).map(i=>({src:i.src,alt:i.alt}));
-function openSummerShredLightbox(i){document.getElementById('ss-lb-img').src=ssImgs[i].src;document.getElementById('ss-lb-img').alt=ssImgs[i].alt;document.getElementById('ss-lightbox').style.display='flex';document.body.style.overflow='hidden'}
+const ssImgs=Array.from(document.querySelectorAll('.pa-summer-shred .ss-transform-card img')).map(i=>({src:i.src,name:i.alt}));
+let ssCi=0;
+function ssShow(i){ssCi=(i+ssImgs.length)%ssImgs.length;document.getElementById('ss-lb-img').src=ssImgs[ssCi].src;document.getElementById('ss-lb-img').alt=ssImgs[ssCi].name;document.getElementById('ss-lb-name').textContent=ssImgs[ssCi].name;document.getElementById('ss-lb-counter').textContent=(ssCi+1)+' / '+ssImgs.length}
+function openSummerShredLightbox(i){document.getElementById('ss-lightbox').style.display='flex';document.body.style.overflow='hidden';ssShow(i)}
 function closeSummerShredLightbox(){document.getElementById('ss-lightbox').style.display='none';document.body.style.overflow=''}
-function openSummerShredExcuseImg(el){const img=el.querySelector('img');document.getElementById('ss-lb-img').src=img.src;document.getElementById('ss-lb-img').alt=img.alt;document.getElementById('ss-lightbox').style.display='flex';document.body.style.overflow='hidden'}
+function ssNextImage(){ssShow(ssCi+1)}
+function ssPrevImage(){ssShow(ssCi-1)}
+function openSummerShredExcuseImg(el){
+  const img=el.querySelector('img');
+  document.getElementById('ss-lb-img').src=img.src;
+  document.getElementById('ss-lb-img').alt=img.alt;
+  document.getElementById('ss-lb-name').textContent=img.alt;
+  document.getElementById('ss-lb-counter').textContent='';
+  document.getElementById('ss-lightbox').style.display='flex';
+  document.body.style.overflow='hidden';
+}
 document.getElementById('ss-lightbox').addEventListener('click',function(e){if(e.target===this)closeSummerShredLightbox()});
 document.addEventListener('keydown',function(e){
   if(document.getElementById('ss-bookingModal').classList.contains('ss-active')){if(e.key==='Escape')closeSummerShredBookingModal();return}
-  if(document.getElementById('ss-lightbox').style.display==='flex'){if(e.key==='Escape')closeSummerShredLightbox()}
+  if(document.getElementById('ss-lightbox').style.display==='flex'){
+    if(e.key==='Escape')closeSummerShredLightbox();
+    if(e.key==='ArrowLeft')ssPrevImage();
+    if(e.key==='ArrowRight')ssNextImage();
+  }
 });
 </script>
