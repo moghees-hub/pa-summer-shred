@@ -80,18 +80,18 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .section-band p{font-size:13px;font-weight:700;color:#000;margin-top:6px;opacity:.85}
 
 /* CHAMPION SECTION */
-.champion{background:#0a0a0a;padding:60px 0;color:#fff}
+.champion{background:#fff;padding:60px 0;color:var(--text)}
 .champion .container{max-width:1100px;margin:0 auto;padding:0 20px}
-.champion__grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:36px}
-.champion__images{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.champion__images img{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,0.08);display:block}
-.champion__quote{background:rgba(255,214,10,0.08);border-left:4px solid var(--gold);padding:24px 28px;border-radius:0 12px 12px 0;margin-bottom:24px}
-.champion__quote p{font-size:16px;line-height:1.6;color:#fff;font-weight:500;font-style:italic}
-.champion__quote cite{display:block;margin-top:14px;font-size:13px;font-weight:800;color:var(--gold);font-style:normal;letter-spacing:.08em}
-.champion__body p{font-size:15px;line-height:1.7;color:rgba(255,255,255,0.85);margin-bottom:16px}
-.champion__body p strong{color:var(--gold);font-weight:800}
-.champion__second-quote{background:rgba(255,255,255,0.04);border:1px solid rgba(255,214,10,0.2);padding:20px 24px;border-radius:12px;margin:20px 0}
-.champion__second-quote p{font-size:15px;font-style:italic;color:#fff;line-height:1.6}
+.champion__images{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;margin-bottom:40px}
+.champion__images img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);display:block}
+.champion__body{max-width:820px;margin:0 auto}
+.champion__quote{background:rgba(255,184,0,0.08);border-left:4px solid var(--gold-2);padding:24px 28px;border-radius:0 12px 12px 0;margin-bottom:28px}
+.champion__quote p{font-size:17px;line-height:1.65;color:var(--text);font-weight:500;font-style:italic;margin:0}
+.champion__quote cite{display:block;margin-top:14px;font-size:13px;font-weight:800;color:var(--gold-2);font-style:normal;letter-spacing:.08em}
+.champion__body p{font-size:16px;line-height:1.75;color:var(--text-secondary);margin:0 0 16px}
+.champion__body p strong{color:var(--text);font-weight:800}
+.champion__second-quote{background:#0a0a0a;border:2px solid var(--gold);padding:22px 26px;border-radius:12px;margin:24px 0}
+.champion__second-quote p{font-size:16px;font-style:italic;color:#fff;line-height:1.65;margin:0}
 
 /* PLACES (2nd / 3rd) */
 .places{background:#0a0a0a;padding:50px 0 60px;color:#fff}
@@ -210,7 +210,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   .hero__bottom-line .hero__bl-break{display:block;height:0;width:100%}
   .hero__sub-title{font-size:13px;letter-spacing:.14em}
   .hero__headline{font-size:22px;margin:24px auto 20px}
-  .champion__grid{grid-template-columns:1fr;gap:28px}
+  .champion__images{grid-template-columns:1fr;gap:12px}
   .places__grid{grid-template-columns:1fr;gap:18px}
   .included__grid{grid-template-columns:1fr;padding:28px 24px;gap:8px}
   .excuse-grid{grid-template-columns:1fr;gap:20px}
@@ -277,28 +277,24 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 <!-- CHAMPION SECTION -->
 <section class="champion">
   <div class="container">
-    <div class="champion__grid">
-      <div class="champion__images">
-        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-01.webp" alt="Laurence transformation" loading="lazy">
-        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-02.webp" alt="Laurence transformation" loading="lazy">
-        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-03.webp" alt="Laurence transformation" loading="lazy">
+    <div class="champion__images">
+      <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-01.webp" alt="Laurence transformation" loading="lazy">
+      <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-02.webp" alt="Laurence transformation" loading="lazy">
+      <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-03.webp" alt="Laurence transformation" loading="lazy">
+    </div>
+    <div class="champion__body">
+      <div class="champion__quote">
+        <p>&ldquo;At first I was in shock, then it slowly sunk in and I couldn&rsquo;t stop smiling! I knew I&rsquo;d accomplished something I&rsquo;d been putting off for a long time, and the fact that it was in a competition was recognition of the sheer hard work I&rsquo;d put in over the past 16 weeks. It means everything to me.&rdquo;</p>
+        <cite>&mdash; Laurence</cite>
       </div>
-      <div>
-        <div class="champion__quote">
-          <p>&ldquo;At first I was in shock, then it slowly sunk in and I couldn&rsquo;t stop smiling! I knew I&rsquo;d accomplished something I&rsquo;d been putting off for a long time, and the fact that it was in a competition was recognition of the sheer hard work I&rsquo;d put in over the past 16 weeks. It means everything to me.&rdquo;</p>
-          <cite>&mdash; Laurence</cite>
-        </div>
-        <div class="champion__body">
-          <p>Laurence was <strong>232lbs</strong> and didn't recognise the man looking back at him in the mirror. Clothes that used to fit were not anymore. He was relying heavily on food and drink just to manage stress.</p>
-          <p>He knew he needed to do something about it, he just kept putting it off. <strong>Then he stopped waiting.</strong></p>
-          <p>16 weeks later, <strong>50 pounds lost</strong>, personal running records broken, and a massive cash prize in his pocket.</p>
-          <p>But when we spoke to him after the challenge, the massive cash prize wasn't even mentioned...</p>
-          <div class="champion__second-quote">
-            <p>&ldquo;I can't operate in the day without a morning run. I love to train harder than ever. I see myself differently. I see the world differently too. Coach Danny and Physique Academy have changed my life!&rdquo;</p>
-          </div>
-          <p style="color:#fff">That's what this challenge actually does. The weight comes off, the confidence comes back, and the man you've been putting off becoming finally shows up.</p>
-        </div>
+      <p>Laurence was <strong>232lbs</strong> and didn't recognise the man looking back at him in the mirror. Clothes that used to fit were not anymore. He was relying heavily on food and drink just to manage stress.</p>
+      <p>He knew he needed to do something about it, he just kept putting it off. <strong>Then he stopped waiting.</strong></p>
+      <p>16 weeks later, <strong>50 pounds lost</strong>, personal running records broken, and a massive cash prize in his pocket.</p>
+      <p>But when we spoke to him after the challenge, the massive cash prize wasn't even mentioned...</p>
+      <div class="champion__second-quote">
+        <p>&ldquo;I can't operate in the day without a morning run. I love to train harder than ever. I see myself differently. I see the world differently too. Coach Danny and Physique Academy have changed my life!&rdquo;</p>
       </div>
+      <p>That's what this challenge actually does. The weight comes off, the confidence comes back, and the man you've been putting off becoming finally shows up.</p>
     </div>
   </div>
 </section>
