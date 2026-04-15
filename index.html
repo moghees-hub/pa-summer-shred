@@ -83,7 +83,7 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 .section-band{background:var(--gold-grad);padding:18px 20px;text-align:center}
 .section-band h2{font-size:clamp(20px,3.2vw,32px);font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#000;line-height:1.1}
 .section-band p{font-size:13px;font-weight:700;color:#000;margin-top:6px;opacity:.85}
-.section-band--lg{padding:20px 20px}
+.section-band--lg{padding:14px 20px}
 .section-band--lg h2{font-size:clamp(36px,5vw,54px);letter-spacing:.02em}
 .section-band--lg p{font-size:clamp(16px,2vw,22px);margin-top:8px;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
 .section-band--lg .pricing-sub{display:inline-flex;align-items:baseline;gap:6px;background:#000;color:#fff;padding:10px 22px;border-radius:30px;margin-top:14px}
@@ -245,6 +245,7 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 .transform-card__name{padding:10px 14px;font-size:12px;font-weight:800;text-align:center;border-top:1px solid var(--border)}
 
 /* PRICING */
+#pricing{scroll-margin-top:56px}
 .pricing{background:#fff;padding:24px 0 32px}
 .pricing .container{max-width:880px;margin:0 auto;padding:0 20px}
 .pricing__grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
@@ -374,7 +375,7 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 <!-- STICKY TOP BAR -->
 <div class="top-bar">
   <div class="top-bar__text"><span class="top-bar__dot"></span>Starting 4th May Limited Spots Available</div>
-  <a href="javascript:void(0);" onclick="openBookingModal()" class="top-bar__btn">Book A Call</a>
+  <a href="javascript:void(0);" onclick="scrollToPricing()" class="top-bar__btn">Secure Your Spot</a>
 </div>
 
 <!-- HERO -->
@@ -487,6 +488,11 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
   </div>
 </section>
 
+<!-- CTA STRIPE -->
+<div class="cta-stripe">
+  <a href="javascript:void(0);" onclick="scrollToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+</div>
+
 <!-- HOW TO WIN BAND -->
 <div class="section-band section-band--lg">
   <h2>How Do You Win $3,000?</h2>
@@ -547,6 +553,9 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 </section>
 
 <!-- CTA STRIPE -->
+<div class="cta-stripe">
+  <a href="javascript:void(0);" onclick="scrollToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+</div>
 
 <!-- WHAT'S INCLUDED -->
 <section class="included">
@@ -596,6 +605,9 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 </section>
 
 <!-- CTA STRIPE -->
+<div class="cta-stripe">
+  <a href="javascript:void(0);" onclick="scrollToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+</div>
 
 <!-- EXCUSES -->
 <section class="excuses">
@@ -647,6 +659,9 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 </section>
 
 <!-- CTA STRIPE -->
+<div class="cta-stripe">
+  <a href="javascript:void(0);" onclick="scrollToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+</div>
 
 <!-- VIDEO TESTIMONIALS -->
 <section class="testimonials">
@@ -725,7 +740,7 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 
 
 <!-- PRICING BAND -->
-<div class="section-band section-band--lg">
+<div class="section-band section-band--lg" id="pricing">
   <h2>Secure Your Spot</h2>
   <div class="pricing-sub">
     <span class="ps-from">From</span>
@@ -740,7 +755,6 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
     <div class="pricing__grid">
       <div class="pricing__card">
         <div class="pricing__plan">Payment Plan</div>
-        <div class="pricing__eyebrow">From $99/week</div>
         <div class="pricing__advert">$469<span>/month</span></div>
         <div class="pricing__tagline">Spread the cost over 4 monthly payments</div>
         <div class="pricing__divider"></div>
@@ -752,7 +766,6 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
       <div class="pricing__card pricing__card--featured">
         <div class="pricing__badge">Best Value Save $295</div>
         <div class="pricing__plan">Paid In Full</div>
-        <div class="pricing__eyebrow">From $99/week</div>
         <div class="pricing__advert">$1,584<span> USD</span></div>
         <div class="pricing__tagline">One single payment</div>
         <div class="pricing__divider"></div>
@@ -816,6 +829,10 @@ function openBookingModal(){
   const iframe=document.getElementById('summer-shred-booking-iframe');
   if(!iframe.src&&iframe.dataset.src){iframe.src=iframe.dataset.src}
   document.getElementById('bookingModal').classList.add('active');document.body.style.overflow='hidden';
+}
+function scrollToPricing(){
+  const el=document.getElementById('pricing');
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function closeBookingModal(){document.getElementById('bookingModal').classList.remove('active');document.body.style.overflow=''}
 document.getElementById('bookingModal').addEventListener('click',function(e){if(e.target===this)closeBookingModal()});
