@@ -84,8 +84,12 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 .section-band h2{font-size:clamp(20px,3.2vw,32px);font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#000;line-height:1.1}
 .section-band p{font-size:13px;font-weight:700;color:#000;margin-top:6px;opacity:.85}
 .section-band--lg{padding:32px 20px}
-.section-band--lg h2{font-size:clamp(38px,6vw,68px);letter-spacing:.02em}
+.section-band--lg h2{font-size:clamp(36px,5vw,54px);letter-spacing:.02em}
 .section-band--lg p{font-size:clamp(16px,2vw,22px);margin-top:8px;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
+.section-band--lg .pricing-sub{display:inline-flex;align-items:baseline;gap:6px;background:#000;color:#fff;padding:10px 22px;border-radius:30px;margin-top:14px}
+.section-band--lg .pricing-sub .ps-from{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.75)}
+.section-band--lg .pricing-sub .ps-amount{font-family:'Oswald',sans-serif;font-size:clamp(28px,3.6vw,40px);font-weight:700;color:var(--gold);line-height:1}
+.section-band--lg .pricing-sub .ps-unit{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;color:#fff;text-transform:lowercase}
 
 /* 2025 CHAMPION BAND */
 .champion-band{background:var(--gold-grad);padding:36px 20px;text-align:center;position:relative;overflow:hidden}
@@ -723,7 +727,11 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 <!-- PRICING BAND -->
 <div class="section-band section-band--lg">
   <h2>Secure Your Spot</h2>
-  <p>From $99 / week</p>
+  <div class="pricing-sub">
+    <span class="ps-from">From</span>
+    <span class="ps-amount">$99</span>
+    <span class="ps-unit">/ week</span>
+  </div>
 </div>
 
 <!-- PRICING -->
