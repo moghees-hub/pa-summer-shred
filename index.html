@@ -166,14 +166,12 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 .included__item::before{content:'\2713';color:var(--gold);font-weight:900;font-size:18px;flex-shrink:0;line-height:1.4}
 
 /* ONE SIZE */
-.onesize{background:#fff;padding:60px 0;text-align:center}
-.onesize .container{max-width:880px;margin:0 auto;padding:0 20px}
-.onesize__sub{font-size:15px;color:#000;font-weight:700;margin-bottom:30px;line-height:1.7;max-width:720px;margin-left:auto;margin-right:auto}
-.onesize__copy{text-align:left;max-width:760px;margin:0 auto}
+.onesize{background:#fff;padding:0}
+.onesize__row{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.onesize__row img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;object-position:center;display:block;cursor:pointer}
+.onesize__copy{max-width:880px;margin:0 auto;padding:40px 20px;text-align:left}
 .onesize__copy p{font-size:15px;color:var(--text-secondary);font-weight:500;line-height:1.75;margin-bottom:14px}
 .onesize__copy p strong{color:#000;font-weight:800}
-.onesize__image{margin:0 auto 32px;max-width:760px;border-radius:14px;overflow:hidden}
-.onesize__image img{width:100%;height:auto;display:block}
 
 /* EXCUSES (4 cards) */
 .excuses{background:#fff;padding:60px 0;text-align:center}
@@ -476,17 +474,22 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 
 <!-- ONE SIZE -->
 <section class="onesize">
-  <div class="container">
-    <div class="onesize__image">
-      <img src="https://via.placeholder.com/760x420/0a0a0a/FFD60A?text=One+Size+Does+Not+Fit+All" alt="One size does not fit all">
-    </div>
-    <div class="onesize__copy">
-      <p>Most programmes fail for the same reason. They ask you to do things you hate, eat in a way that doesn't suit you, and fit your life around a plan instead of the other way around.</p>
-      <p><strong>We do it differently.</strong></p>
-      <p>You will get a coach based on your lifestyle and training preferences, building your training and nutrition around your lifestyle, your preferences, and what you can realistically sustain.</p>
-      <p><strong>Not just for 16 weeks, but beyond it.</strong></p>
-      <p>The goal isn't to get you to the finish line. It's to make sure you never need to start over again.</p>
-    </div>
+  <div class="onesize__row">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-01.webp" alt="One Size Does Not Fit All" loading="lazy" onclick="openImg(this)">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-02.webp" alt="One Size Does Not Fit All" loading="lazy" onclick="openImg(this)">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-03.webp" alt="One Size Does Not Fit All" loading="lazy" onclick="openImg(this)">
+  </div>
+  <div class="onesize__copy">
+    <p>Most programmes fail for the same reason. They ask you to do things you hate, eat in a way that doesn't suit you, and fit your life around a plan instead of the other way around.</p>
+    <p><strong>We do it differently.</strong></p>
+    <p>You will get a coach based on your lifestyle and training preferences, building your training and nutrition around your lifestyle, your preferences, and what you can realistically sustain.</p>
+    <p><strong>Not just for 16 weeks, but beyond it.</strong></p>
+    <p>The goal isn't to get you to the finish line. It's to make sure you never need to start over again.</p>
+  </div>
+  <div class="onesize__row">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-04.webp" alt="One Size Does Not Fit All" loading="lazy" onclick="openImg(this)">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-05.webp" alt="One Size Does Not Fit All" loading="lazy" onclick="openImg(this)">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-06.webp" alt="One Size Does Not Fit All" loading="lazy" onclick="openImg(this)">
   </div>
 </section>
 
