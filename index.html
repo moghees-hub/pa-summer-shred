@@ -240,6 +240,33 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 .transform-card:hover img{transform:scale(1.04)}
 .transform-card__name{padding:10px 14px;font-size:12px;font-weight:800;text-align:center;border-top:1px solid var(--border)}
 
+/* PRICING */
+.pricing{background:#fff;padding:40px 0 56px}
+.pricing .container{max-width:1000px;margin:0 auto;padding:0 20px}
+.pricing__grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.pricing__card{background:#fff;border:2px solid var(--border);border-radius:18px;padding:32px 28px;position:relative;display:flex;flex-direction:column}
+.pricing__card--featured{border-color:var(--gold);background:#fffdf5}
+.pricing__badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold-grad);color:#000;font-family:'Oswald',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 18px;border-radius:20px;white-space:nowrap}
+.pricing__plan{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;color:var(--gold-2);margin-bottom:4px;letter-spacing:.04em}
+.pricing__advert{font-family:'Oswald',sans-serif;font-size:clamp(42px,5vw,56px);font-weight:700;color:var(--text);line-height:1;margin-bottom:2px}
+.pricing__advert span{font-size:18px;font-weight:600;color:var(--text-secondary)}
+.pricing__tagline{font-size:13px;color:var(--gray);font-weight:500;margin-bottom:24px}
+.pricing__divider{height:1px;background:var(--border);margin:0 -28px 20px}
+.pricing__total-label{font-size:12px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.08em}
+.pricing__total{font-family:'Oswald',sans-serif;font-size:clamp(28px,3.6vw,36px);font-weight:700;color:var(--text);line-height:1;margin:4px 0}
+.pricing__detail{font-size:13px;color:var(--text-secondary);font-weight:500;margin-bottom:24px}
+.pricing__detail strong{color:var(--gold-2);font-weight:700}
+.pricing__btn{display:block;text-align:center;background:var(--gold-grad);color:#000;font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:16px 24px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,filter .2s;margin-top:auto}
+.pricing__btn:hover{transform:scale(1.02);filter:brightness(1.05)}
+.pricing__btn--outline{background:#fff;color:var(--text);border:2px solid var(--border)}
+.pricing__btn--outline:hover{border-color:var(--gold);color:var(--gold-2)}
+.pricing__footnote{text-align:center;margin-top:20px;font-size:12px;color:var(--gray)}
+@media(max-width:768px){
+  .pricing{padding:28px 0 36px}
+  .pricing__grid{grid-template-columns:1fr;gap:28px;margin-top:24px}
+  .pricing__card{padding:28px 22px}
+}
+
 /* BOTTOM CTA */
 .bottom-cta{background:#0a0a0a;padding:32px 20px;text-align:center;color:#fff}
 .bottom-cta__eyebrow{font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -691,6 +718,41 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 
 <!-- CTA STRIPE -->
 
+
+<!-- PRICING BAND -->
+<div class="section-band section-band--lg">
+  <h2>Secure Your Spot</h2>
+</div>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="container">
+    <div class="pricing__grid">
+      <div class="pricing__card">
+        <div class="pricing__plan">Payment Plan</div>
+        <div class="pricing__advert">$99<span>/week</span></div>
+        <div class="pricing__tagline">Spread the cost over 4 payments</div>
+        <div class="pricing__divider"></div>
+        <div class="pricing__total-label">Total</div>
+        <div class="pricing__total">$1,879 USD</div>
+        <div class="pricing__detail">4 payments</div>
+        <a href="https://billing.physiqueacademy.com/summer-shred-2026" class="pricing__btn pricing__btn--outline">Choose Payment Plan</a>
+      </div>
+      <div class="pricing__card pricing__card--featured">
+        <div class="pricing__badge">Best Value — Save $295</div>
+        <div class="pricing__plan">Paid In Full</div>
+        <div class="pricing__advert">$99<span>/week</span></div>
+        <div class="pricing__tagline">One single payment</div>
+        <div class="pricing__divider"></div>
+        <div class="pricing__total-label">Total</div>
+        <div class="pricing__total">$1,584 USD</div>
+        <div class="pricing__detail"><strong>Save $295</strong> vs payment plan</div>
+        <a href="https://billing.physiqueacademy.com/summer-shred-2026-full" class="pricing__btn">Pay In Full</a>
+      </div>
+    </div>
+    <p class="pricing__footnote">Sign up closes 30th April. Challenge starts 4th May.</p>
+  </div>
+</section>
 
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
