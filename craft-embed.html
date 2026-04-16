@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <script src="https://fast.wistia.com/player.js" async></script>
 <style>
-/* Craft CMS full-bleed override — break out of content container */
+/* Craft CMS full-bleed overrides — break out of the content container */
 .content-wrapper:has(.pa-summer-shred),
 .entry-content:has(.pa-summer-shred),
 .entry:has(.pa-summer-shred),
@@ -12,11 +12,29 @@ article:has(.pa-summer-shred),
 .page-content:has(.pa-summer-shred){max-width:none!important;padding-left:0!important;padding-right:0!important;width:100%!important}
 .pa-summer-shred{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}
 
-/* Targeted scoped resets — avoid * reset (breaks third-party widgets) */
-.pa-summer-shred .ss-section,
-.pa-summer-shred .ss-section *,
-.pa-summer-shred .ss-band,
-.pa-summer-shred .ss-stripe{box-sizing:border-box}
+/* Scoped targeted box-sizing (no blanket * reset) */
+.pa-summer-shred,
+.pa-summer-shred .top-bar,.pa-summer-shred .top-bar__btn,
+.pa-summer-shred .cta-stripe,.pa-summer-shred .cta-stripe__btn,
+.pa-summer-shred .hero,.pa-summer-shred .hero__bg,.pa-summer-shred .hero__poster,.pa-summer-shred .hero__poster-bottom,.pa-summer-shred .hero__slash,.pa-summer-shred .hero__slash-sub,.pa-summer-shred .hero__video-wrap,.pa-summer-shred .hero__banner-img,.pa-summer-shred .hero .container,
+.pa-summer-shred .video-wrap,
+.pa-summer-shred .section-band,.pa-summer-shred .section-band--lg,
+.pa-summer-shred .champion-band,.pa-summer-shred .champion-band__inner,.pa-summer-shred .champion-band__trophy,
+.pa-summer-shred .champion,.pa-summer-shred .champion .container,.pa-summer-shred .champion__row,.pa-summer-shred .champion__img-col,.pa-summer-shred .champion__text-col,.pa-summer-shred .champion__quote,.pa-summer-shred .champion__second-quote,.pa-summer-shred .champion__cta-wrap,
+.pa-summer-shred .places,.pa-summer-shred .places .container,.pa-summer-shred .places__grid,.pa-summer-shred .place-card,.pa-summer-shred .place-card__title,.pa-summer-shred .place-card__images,
+.pa-summer-shred .howwin,.pa-summer-shred .howwin .container,.pa-summer-shred .howwin__lead,.pa-summer-shred .howwin__steps,.pa-summer-shred .howwin__step,.pa-summer-shred .howwin__step-num,.pa-summer-shred .howwin__prize,.pa-summer-shred .howwin__prize-amount,.pa-summer-shred .howwin__prize-sub,.pa-summer-shred .howwin__closing,.pa-summer-shred .howwin__footnote,
+.pa-summer-shred .problem-light,.pa-summer-shred .problem-light .container,.pa-summer-shred .problem-light__copy,.pa-summer-shred .problem-light__img,
+.pa-summer-shred .included,.pa-summer-shred .included .container,.pa-summer-shred .included__grid,.pa-summer-shred .included__item,
+.pa-summer-shred .onesize,.pa-summer-shred .onesize__row,.pa-summer-shred .onesize__copy,
+.pa-summer-shred .excuses,.pa-summer-shred .excuses .container,.pa-summer-shred .excuse-grid,.pa-summer-shred .excuse-card,.pa-summer-shred .excuse-card__img,.pa-summer-shred .excuse-card__text,
+.pa-summer-shred .testimonials,.pa-summer-shred .testimonials .container,.pa-summer-shred .testi-grid,.pa-summer-shred .testi-card,.pa-summer-shred .testi-card__thumb,.pa-summer-shred .testi-card__body,
+.pa-summer-shred .transform-section,.pa-summer-shred .transform-section .container,.pa-summer-shred .transform-grid,.pa-summer-shred .transform-card,.pa-summer-shred .transform-card__name,
+.pa-summer-shred .pricing,.pa-summer-shred .pricing__container,.pa-summer-shred .pricing__header,.pa-summer-shred .pricing__grid,.pa-summer-shred .pricing__card,.pa-summer-shred .pricing__badge,.pa-summer-shred .pricing__features,.pa-summer-shred .pricing__btn,.pa-summer-shred .pricing__divider,
+.pa-summer-shred .bottom-cta,.pa-summer-shred .bottom-cta__btn,
+.pa-summer-shred .footer,
+.pa-summer-shred .booking-overlay,.pa-summer-shred .booking-modal,.pa-summer-shred .booking-modal-close,.pa-summer-shred .booking-modal-content,
+.pa-summer-shred #ss-lightbox,.pa-summer-shred .lb-btn,
+.pa-summer-shred .banner-fullbleed{box-sizing:border-box}
 
 .pa-summer-shred{
   --gold:#FFD60A;
@@ -30,379 +48,693 @@ article:has(.pa-summer-shred),
   --border:#e5e7eb;
   --text:#1a1a1a;
   --text-secondary:#444;
-  font-family:'Inter',sans-serif;
-  font-size:16px;
-  line-height:1.6;
-  color:var(--text);
-  background:var(--white);
+  --red:#e74c3c;
+  --green-num:#2ecc40;
+  --display:'Oswald','Inter',sans-serif;
+  background:var(--white);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;
 }
-.pa-summer-shred{--ss-display:'Oswald','Inter',sans-serif}
-.pa-summer-shred .ss-hero__title,
-.pa-summer-shred .ss-hero__sub,
-.pa-summer-shred .ss-band h2,
-.pa-summer-shred .ss-included h2,
-.pa-summer-shred .ss-excuses h2,
-.pa-summer-shred .ss-testi h2,
-.pa-summer-shred .ss-transform h2,
-.pa-summer-shred .ss-bottom h2,
-.pa-summer-shred .ss-place__title,
-.pa-summer-shred .ss-stripe__btn,
-.pa-summer-shred .ss-hero__cta,
-.pa-summer-shred .ss-bottom__btn,
-.pa-summer-shred .ss-topbar__btn{font-family:var(--ss-display);letter-spacing:.02em}
-.pa-summer-shred .ss-hero__title{letter-spacing:-.01em}
-.pa-summer-shred a{text-decoration:none}
-.pa-summer-shred img{max-width:100%;height:auto;display:block}
+.pa-summer-shred .hero__title,.pa-summer-shred .hero__sub-title,.pa-summer-shred .hero__headline,.pa-summer-shred .section-band h2,.pa-summer-shred .champion h2,.pa-summer-shred .included h2,.pa-summer-shred .excuses h2,.pa-summer-shred .testimonials h2,.pa-summer-shred .transform-section h2,.pa-summer-shred .bottom-cta h2,.pa-summer-shred .place-card__title,.pa-summer-shred .cta-stripe__btn,.pa-summer-shred .hero__cta,.pa-summer-shred .bottom-cta__btn,.pa-summer-shred .top-bar__btn{font-family:var(--display)}
+.pa-summer-shred h1,.pa-summer-shred h2,.pa-summer-shred h3,.pa-summer-shred .hero__title,.pa-summer-shred .hero__sub-title,.pa-summer-shred .hero__headline,.pa-summer-shred .hero__close-line,.pa-summer-shred .hero__slash-inner,.pa-summer-shred .hero__slash-sub-inner,.pa-summer-shred .hero__bottom-line,.pa-summer-shred .section-band h2,.pa-summer-shred .section-band--lg h2,.pa-summer-shred .section-band p,.pa-summer-shred .champion-band__year,.pa-summer-shred .champion-band__quote,.pa-summer-shred .included h2,.pa-summer-shred .excuses h2,.pa-summer-shred .testimonials h2,.pa-summer-shred .transform-section h2,.pa-summer-shred .bottom-cta h2,.pa-summer-shred .place-card__title{letter-spacing:0;margin:0;padding:0}
+.pa-summer-shred p,.pa-summer-shred ul,.pa-summer-shred li{margin:0;padding:0}
+.pa-summer-shred ul{list-style:none}
 
-/* TOP BAR */
-.pa-summer-shred .ss-topbar{position:sticky;top:0;z-index:1000;background:#000;border-bottom:2px solid var(--gold);padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:16px}
-.pa-summer-shred .ss-topbar__text{color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}
-.pa-summer-shred .ss-topbar__dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:ssPulse 1.6s ease-in-out infinite}
+/* STICKY TOP BAR */
+.pa-summer-shred .top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:2px solid var(--gold);padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 1px 12px rgba(0,0,0,0.2)}
+.pa-summer-shred .top-bar__text{color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}
+.pa-summer-shred .top-bar__dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:ssPulse 1.6s ease-in-out infinite}
 @keyframes ssPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
-.pa-summer-shred .ss-topbar__btn{background:var(--gold-grad);color:#000;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:8px 18px;border-radius:20px;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.pa-summer-shred .top-bar__btn{background:var(--gold-grad);color:#000;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:8px 18px;border-radius:20px;text-decoration:none;transition:transform .2s,filter .2s;white-space:nowrap;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.pa-summer-shred .top-bar__btn:hover{transform:scale(1.05);filter:brightness(1.08)}
 
-/* CTA STRIPE */
-.pa-summer-shred .ss-stripe{background:var(--gold-grad);padding:22px 20px;text-align:center;color:#000}
-.pa-summer-shred .ss-stripe__small{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#000;opacity:.85;margin-bottom:10px}
-.pa-summer-shred .ss-stripe__btn{display:inline-block;background:#000;color:var(--gold);font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:16px 36px;border-radius:8px;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+/* SCROLL REVEAL */
+.pa-summer-shred [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.pa-summer-shred [data-reveal].visible{opacity:1;transform:none}
+
+/* GENERIC CTA BAR (yellow stripe) */
+.pa-summer-shred .cta-stripe{background:#0a0a0a;padding:26px 20px;text-align:center;color:#fff;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+.pa-summer-shred .cta-stripe__small{font-family:'Oswald',sans-serif;font-size:clamp(14px,1.8vw,18px);font-weight:600;text-transform:uppercase;color:#fff;margin-bottom:14px;line-height:1.2}
+.pa-summer-shred .cta-stripe__small span{color:var(--gold);font-weight:700}
+.pa-summer-shred .cta-stripe__btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold-grad);color:#000;font-family:'Oswald',sans-serif;font-size:clamp(18px,2.2vw,24px);font-weight:700;text-transform:uppercase;padding:16px 36px;border-radius:10px;text-decoration:none;transition:transform .2s,filter .2s;cursor:pointer;border:none}
+.pa-summer-shred .cta-stripe__btn::after{content:'\2192';font-size:1.1em;line-height:1}
+.pa-summer-shred .cta-stripe__btn:hover{transform:scale(1.03);filter:brightness(1.06)}
+@media(max-width:768px){.pa-summer-shred .cta-stripe{padding:20px 16px}.pa-summer-shred .cta-stripe__btn{padding:14px 24px;font-size:16px}}
 
 /* HERO */
-.pa-summer-shred .ss-hero{background:#000;padding:0;text-align:center;position:relative;overflow:hidden}
-.pa-summer-shred .ss-hero-bg{position:relative;min-height:760px;background:url('https://physique-academy.s3.amazonaws.com/summer-shred/george-summer-shred-hero.webp') center top/cover no-repeat;display:flex;align-items:flex-end;justify-content:center;padding:70px 0 70px}
-.pa-summer-shred .ss-hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.15) 30%,rgba(0,0,0,0.55) 70%,rgba(0,0,0,0.9) 100%);pointer-events:none}
-.pa-summer-shred .ss-hero-video{background:#000;padding:40px 0 28px}
-.pa-summer-shred .ss-hero__inner{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 20px}
-.pa-summer-shred .ss-hero__eyebrow{display:inline-block;background:var(--gold-grad);color:#000;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:18px}
-.pa-summer-shred .ss-hero__title{font-size:clamp(40px,7vw,84px);font-weight:900;line-height:.95;letter-spacing:-.02em;margin-bottom:8px;text-transform:uppercase;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 30px rgba(255,214,10,0.25)}
-.pa-summer-shred .ss-hero__sub{font-size:clamp(14px,2vw,18px);font-weight:800;color:#fff;letter-spacing:.18em;text-transform:uppercase;margin-bottom:30px}
-.pa-summer-shred .ss-hero__sub span{color:var(--gold)}
-.pa-summer-shred .ss-video{max-width:820px;margin:34px auto 0;border-radius:16px;overflow:hidden;box-shadow:0 0 60px rgba(0,0,0,0.5);border:2px solid rgba(255,214,10,0.2)}
-.pa-summer-shred .ss-hero__close-line{font-size:13px;color:#fff;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-top:24px;opacity:.9}
-.pa-summer-shred .ss-hero__close-line strong{color:var(--gold)}
-.pa-summer-shred .ss-hero__cta{display:inline-block;background:var(--gold-grad);color:#000;font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:18px 40px;border-radius:8px;cursor:pointer;border:none;font-family:'Inter',sans-serif;box-shadow:0 8px 28px rgba(255,184,0,0.35);margin-top:18px}
+.pa-summer-shred .hero{background:#000;padding:0;text-align:center;position:relative;overflow:hidden}
+.pa-summer-shred .hero__bg{position:relative;min-height:820px;background:url('https://physique-academy.s3.amazonaws.com/summer-shred/george-summer-shred-hero.webp') center top/cover no-repeat;display:flex;flex-direction:column;justify-content:flex-end;padding:80px 0 0}
+.pa-summer-shred .hero__bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.25) 55%,rgba(0,0,0,0.85) 90%,rgba(0,0,0,0.95) 100%);pointer-events:none}
+.pa-summer-shred .hero__poster{position:relative;z-index:2;text-align:center;padding:0 20px}
+.pa-summer-shred .hero__poster-bottom{position:relative;z-index:2;width:100%;max-width:1100px;margin:24px auto 0;padding:0 20px}
+.pa-summer-shred .hero__slash{display:inline-block;background:var(--gold-grad);transform:skew(-8deg);padding:10px 36px;margin-bottom:8px}
+.pa-summer-shred .hero__slash-inner{display:inline-block;transform:skew(8deg);font-family:'Oswald',sans-serif;font-size:clamp(46px,8vw,96px);font-weight:700;color:#000;letter-spacing:.01em;text-transform:uppercase;line-height:1}
+.pa-summer-shred .hero__slash-sub{display:inline-block;background:rgba(0,0,0,0.88);transform:skew(-8deg);padding:7px 22px;border:2px solid var(--gold)}
+.pa-summer-shred .hero__slash-sub-inner{display:inline-block;transform:skew(8deg);font-family:'Oswald',sans-serif;font-size:clamp(11px,1.5vw,14px);font-weight:600;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.pa-summer-shred .hero__bottom-line{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.6vw,44px);font-weight:600;color:#fff;letter-spacing:.04em;text-transform:uppercase;line-height:1.15;text-align:center;text-shadow:0 2px 18px rgba(0,0,0,0.6)}
+.pa-summer-shred .hero__bottom-line span{color:var(--gold);font-weight:700}
+.pa-summer-shred .hero__bottom-line .hero__bl-break{display:none}
+.pa-summer-shred .hero__video-wrap{background:#000;padding:0 0 24px}
+.pa-summer-shred .banner-fullbleed{background:#0a0a0a;line-height:0;max-height:480px;overflow:hidden}
+.pa-summer-shred .banner-fullbleed img{width:100%;height:auto;max-height:480px;object-fit:cover;object-position:center;display:block}
+@media(max-width:768px){.pa-summer-shred .banner-fullbleed,.pa-summer-shred .banner-fullbleed img{max-height:280px}}
+.pa-summer-shred .hero__banner-img{background:#000;line-height:0;padding:0 20px 40px;max-width:1100px;margin:0 auto}
+.pa-summer-shred .hero__banner-img img{width:100%;height:auto;max-height:420px;object-fit:cover;object-position:center;display:block;border-radius:12px}
+@media(max-width:768px){.pa-summer-shred .hero__banner-img{padding:0 16px 28px}.pa-summer-shred .hero__banner-img img{max-height:260px}}
+.pa-summer-shred .hero .container{position:relative;z-index:1;width:100%;max-width:980px;margin:0 auto;padding:0 20px}
+.pa-summer-shred .hero__eyebrow{display:inline-block;background:var(--gold-grad);color:#000;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:18px}
+.pa-summer-shred .hero__title{font-size:clamp(40px,7vw,84px);font-weight:900;line-height:.95;letter-spacing:-.02em;color:var(--gold);margin-bottom:8px;text-transform:uppercase;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 30px rgba(255,214,10,0.25)}
+.pa-summer-shred .hero__sub-title{font-size:clamp(14px,2vw,18px);font-weight:800;color:#fff;letter-spacing:.18em;text-transform:uppercase;margin-bottom:30px}
+.pa-summer-shred .hero__headline{font-size:clamp(22px,3.6vw,40px);font-weight:900;line-height:1.1;color:#fff;margin:30px auto 24px;max-width:820px}
+.pa-summer-shred .hero__headline em{font-style:normal;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pa-summer-shred .hero__cta{display:inline-block;background:var(--gold-grad);color:#000;font-size:clamp(16px,2vw,22px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:22px 56px;border-radius:10px;text-decoration:none;transition:transform .2s,filter .2s;cursor:pointer;border:none}
+.pa-summer-shred .hero__cta:hover{transform:scale(1.04);filter:brightness(1.08)}
+.pa-summer-shred .video-wrap{max-width:820px;margin:34px auto 0;border-radius:16px;overflow:hidden;box-shadow:0 0 60px rgba(0,0,0,0.5),0 20px 60px rgba(0,0,0,0.4);border:2px solid rgba(255,214,10,0.2)}
+.pa-summer-shred .hero__close-line{font-family:'Oswald',sans-serif;font-size:clamp(26px,4vw,44px);color:#fff;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-top:36px;text-align:center;line-height:1.05}
+.pa-summer-shred .hero__close-line strong{color:#fff;font-weight:600}
+.pa-summer-shred .hero__close-line sup{font-size:.55em;vertical-align:super;font-weight:500;text-transform:uppercase;margin-left:1px}
+.pa-summer-shred .hero__subnote{font-family:'Inter',sans-serif;font-size:13px;color:var(--gold);font-weight:500;font-style:italic;margin-top:14px;letter-spacing:.04em}
 
-/* SECTION BAND */
-.pa-summer-shred .ss-band{background:var(--gold-grad);padding:18px 20px;text-align:center;color:#000}
-.pa-summer-shred .ss-band h2{font-size:clamp(20px,3.2vw,32px);font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#000;line-height:1.1;margin:0}
-.pa-summer-shred .ss-band p{font-size:13px;font-weight:700;color:#000;margin:6px 0 0;opacity:.85}
+/* SECTION HEAD STRIPES (yellow bands like mockup) */
+.pa-summer-shred .section-band{background:var(--gold-grad);padding:18px 20px;text-align:center}
+.pa-summer-shred .section-band h2{font-size:clamp(20px,3.2vw,32px);font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#000;line-height:1.1}
+.pa-summer-shred .section-band p{font-size:13px;font-weight:700;color:#000;margin-top:6px;opacity:.85}
+.pa-summer-shred .section-band--lg{padding:14px 20px}
+.pa-summer-shred .section-band--lg h2{font-size:clamp(36px,5vw,54px);letter-spacing:.02em}
+.pa-summer-shred .section-band--lg p{font-size:clamp(16px,2vw,22px);margin-top:8px;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
+.pa-summer-shred .section-band--lg .pricing-sub{display:inline-flex;align-items:baseline;gap:6px;background:#000;color:#fff;padding:10px 22px;border-radius:30px;margin-top:14px}
+.pa-summer-shred .section-band--lg .pricing-sub .ps-from{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.75)}
+.pa-summer-shred .section-band--lg .pricing-sub .ps-amount{font-family:'Oswald',sans-serif;font-size:clamp(28px,3.6vw,40px);font-weight:700;color:var(--gold);line-height:1}
+.pa-summer-shred .section-band--lg .pricing-sub .ps-unit{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;color:#fff;text-transform:lowercase}
 
-/* CHAMPION / PLACES (dark) */
-.pa-summer-shred .ss-dark{background:#0a0a0a;padding:60px 0;color:#fff}
-.pa-summer-shred .ss-dark .ss-inner{max-width:1100px;margin:0 auto;padding:0 20px}
-.pa-summer-shred .ss-champion-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:24px}
-.pa-summer-shred .ss-champion-imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.pa-summer-shred .ss-champion-imgs img{border-radius:12px;border:1px solid rgba(255,255,255,0.08)}
-.pa-summer-shred .ss-quote{background:rgba(255,214,10,0.08);border-left:4px solid var(--gold);padding:24px 28px;border-radius:0 12px 12px 0;margin-bottom:24px}
-.pa-summer-shred .ss-quote p{font-size:16px;line-height:1.6;color:#fff;font-weight:500;font-style:italic;margin:0}
-.pa-summer-shred .ss-quote cite{display:block;margin-top:14px;font-size:13px;font-weight:800;color:var(--gold);font-style:normal;letter-spacing:.08em}
-.pa-summer-shred .ss-champion-body p{font-size:15px;line-height:1.7;color:rgba(255,255,255,0.85);margin:0 0 16px}
-.pa-summer-shred .ss-champion-body p strong{color:var(--gold);font-weight:800}
-.pa-summer-shred .ss-quote-2{background:rgba(255,255,255,0.04);border:1px solid rgba(255,214,10,0.2);padding:20px 24px;border-radius:12px;margin:20px 0}
-.pa-summer-shred .ss-quote-2 p{font-size:15px;font-style:italic;color:#fff;line-height:1.6;margin:0}
+/* 2025 CHAMPION BAND */
+.pa-summer-shred .champion-band{background:var(--gold-grad);padding:36px 20px;text-align:center;position:relative;overflow:hidden}
+.pa-summer-shred .champion-band::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 24px,rgba(0,0,0,0.04) 24px 25px);pointer-events:none}
+.pa-summer-shred .champion-band__inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.pa-summer-shred .champion-band__trophy{width:54px;height:54px;border-radius:50%;background:#0a0a0a;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 4px rgba(0,0,0,0.08)}
+.pa-summer-shred .champion-band__trophy svg{width:28px;height:28px;color:var(--gold)}
+.pa-summer-shred .champion-band__year{font-family:'Oswald',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:700;color:#000;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.pa-summer-shred .champion-band__quote{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.5vw,38px);font-weight:600;color:#000;letter-spacing:.02em;line-height:1;font-style:italic;opacity:.82}
+@media(max-width:768px){
+  .pa-summer-shred .champion-band{padding:22px 12px}
+  .pa-summer-shred .champion-band__inner{gap:10px;flex-wrap:nowrap}
+  .pa-summer-shred .champion-band__trophy{width:44px;height:44px;box-shadow:0 0 0 3px rgba(0,0,0,0.08)}
+  .pa-summer-shred .champion-band__trophy svg{width:24px;height:24px}
+  .pa-summer-shred .champion-band__year{font-size:26px;letter-spacing:.02em;white-space:nowrap}
+  .pa-summer-shred .champion-band__quote{font-size:20px;white-space:nowrap}
+}
+@media(max-width:480px){
+  .pa-summer-shred .champion-band{padding:18px 8px}
+  .pa-summer-shred .champion-band__inner{gap:8px}
+  .pa-summer-shred .champion-band__trophy{width:38px;height:38px}
+  .pa-summer-shred .champion-band__trophy svg{width:20px;height:20px}
+  .pa-summer-shred .champion-band__year{font-size:22px}
+  .pa-summer-shred .champion-band__quote{font-size:17px}
+}
 
-.pa-summer-shred .ss-places-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
-.pa-summer-shred .ss-place{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden}
-.pa-summer-shred .ss-place__title{padding:16px 20px;font-size:18px;font-weight:900;color:var(--gold);letter-spacing:.04em;text-align:center;border-bottom:1px solid rgba(255,255,255,0.06)}
-.pa-summer-shred .ss-place__imgs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px}
-.pa-summer-shred .ss-place__imgs img{border-radius:8px}
+/* CHAMPION SECTION — zigzag */
+.pa-summer-shred .champion{background:#fff;padding:60px 0;color:var(--text)}
+.pa-summer-shred .champion .container{max-width:1100px;margin:0 auto;padding:0 20px}
+.pa-summer-shred .champion__row{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-bottom:36px}
+.pa-summer-shred .champion__row .champion__text-col{align-self:center}
+.pa-summer-shred .champion__row img,.pa-summer-shred .place-card__images img{cursor:pointer;transition:transform .25s}
+.pa-summer-shred .champion__row img:hover,.pa-summer-shred .place-card__images img:hover{transform:scale(1.02)}
+.pa-summer-shred .champion__row--reverse .champion__img-col{order:2}
+.pa-summer-shred .champion__row--reverse .champion__text-col{order:1}
+.pa-summer-shred .champion__row img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);display:block}
+.pa-summer-shred .champion__text-col p{font-size:16px;line-height:1.75;color:var(--text-secondary);margin:0 0 16px}
+.pa-summer-shred .champion__text-col p strong{color:var(--text);font-weight:800}
+.pa-summer-shred .champion__quote{background:rgba(255,184,0,0.08);border-left:4px solid var(--gold-2);padding:22px 26px;border-radius:0 12px 12px 0}
+.pa-summer-shred .champion__quote p{font-size:17px;line-height:1.6;color:var(--text);font-weight:500;font-style:italic;margin:0}
+.pa-summer-shred .champion__quote cite{display:block;margin-top:12px;font-size:13px;font-weight:800;color:var(--gold-2);font-style:normal;letter-spacing:.08em}
+.pa-summer-shred .champion__second-quote{background:#0a0a0a;border:2px solid var(--gold);padding:20px 24px;border-radius:12px;margin:0 0 16px}
+.pa-summer-shred .champion__second-quote p{font-size:15px;font-style:italic;color:#fff;line-height:1.6;margin:0}
+.pa-summer-shred .champion__cta-wrap{text-align:center;margin-top:24px}
 
-/* PROBLEM LIGHT */
-.pa-summer-shred .ss-problem{background:#fff;padding:56px 0;text-align:center}
-.pa-summer-shred .ss-problem .ss-inner{max-width:760px;margin:0 auto;padding:0 20px}
-.pa-summer-shred .ss-problem p{font-size:16px;color:#000;font-weight:600;line-height:1.7;margin:0 0 14px}
-.pa-summer-shred .ss-problem p.ss-lead{font-size:18px;font-weight:800}
-.pa-summer-shred .ss-problem p.ss-italic{font-style:italic;font-weight:700;margin:18px 0}
-.pa-summer-shred .ss-problem p.ss-bold{font-weight:800;margin-top:18px}
+/* PLACES (2nd / 3rd) */
+.pa-summer-shred .places{background:#fff;padding:0 0 60px;color:var(--text)}
+.pa-summer-shred .places .container{max-width:1100px;margin:0 auto;padding:20px 20px 0}
+.pa-summer-shred .places__grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:0}
+.pa-summer-shred .place-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.pa-summer-shred .place-card__title{padding:16px 20px;font-size:18px;font-weight:900;color:var(--text);letter-spacing:.04em;text-align:center;border-bottom:1px solid var(--border)}
+.pa-summer-shred .place-card__title strong{color:var(--gold-2)}
+.pa-summer-shred .place-card__images{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px}
+.pa-summer-shred .place-card__images img:first-child{grid-column:1/-1}
+.pa-summer-shred .place-card__images img{width:100%;height:auto;border-radius:8px;display:block}
 
-/* INCLUDED */
-.pa-summer-shred .ss-included{background:var(--gold-grad-soft);padding:60px 0;color:#000}
-.pa-summer-shred .ss-included .ss-inner{max-width:980px;margin:0 auto;padding:0 20px}
-.pa-summer-shred .ss-included h2{font-size:clamp(26px,4vw,42px);font-weight:900;text-align:center;color:#000;letter-spacing:-.02em;margin:0 0 36px}
-.pa-summer-shred .ss-included__grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;background:#000;border-radius:18px;padding:36px 40px}
-.pa-summer-shred .ss-included__item{display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:15px;font-weight:600;line-height:1.5;padding:8px 0}
-.pa-summer-shred .ss-included__item::before{content:'\2713';color:var(--gold);font-weight:900;font-size:18px;flex-shrink:0;line-height:1.4}
+/* HOW TO WIN SECTION */
+.pa-summer-shred .howwin{background:#fff;padding:48px 0;color:var(--text)}
+.pa-summer-shred .howwin .container{max-width:980px;margin:0 auto;padding:0 20px}
+.pa-summer-shred .howwin__lead{text-align:center;font-family:'Oswald',sans-serif;font-size:clamp(24px,3.8vw,40px);font-weight:700;text-transform:uppercase;line-height:1.1;margin-bottom:36px}
+.pa-summer-shred .howwin__lead em{font-style:normal;color:var(--gold-2);display:block;margin-top:4px}
+.pa-summer-shred .howwin__steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+.pa-summer-shred .howwin__step{background:#fafbfc;border:1px solid var(--border);border-radius:14px;padding:26px 24px;position:relative}
+.pa-summer-shred .howwin__step-num{position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--gold-grad);color:#000;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700}
+.pa-summer-shred .howwin__step h3{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;margin:8px 0 12px;color:var(--text);line-height:1.15}
+.pa-summer-shred .howwin__step p{font-size:14px;line-height:1.6;color:var(--text-secondary);margin:0}
+.pa-summer-shred .howwin__prize{background:#0a0a0a;border:2px solid var(--gold);border-radius:14px;padding:22px 28px;margin:0 auto 22px;max-width:640px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.pa-summer-shred .howwin__prize-amount{font-family:'Oswald',sans-serif;font-size:clamp(42px,5vw,60px);font-weight:700;color:var(--gold);line-height:1;flex-shrink:0}
+.pa-summer-shred .howwin__prize-sub{color:#fff;font-size:15px;font-weight:600;line-height:1.4;text-align:left;max-width:360px}
+@media(max-width:480px){.pa-summer-shred .howwin__prize{flex-direction:column;gap:8px;padding:20px}.pa-summer-shred .howwin__prize-sub{text-align:center}}
+.pa-summer-shred .howwin__closing{text-align:center;font-size:15px;line-height:1.65;color:var(--text-secondary);font-style:italic;max-width:760px;margin:0 auto}
+.pa-summer-shred .howwin__closing strong{color:var(--text);font-style:normal;font-weight:700}
+.pa-summer-shred .howwin__footnote{text-align:center;font-size:12px;color:var(--gray);margin-top:16px}
+@media(max-width:768px){
+  .pa-summer-shred .howwin{padding:32px 0}
+  .pa-summer-shred .howwin__steps{grid-template-columns:1fr;gap:24px;margin-bottom:24px}
+  .pa-summer-shred .howwin__step{padding:22px 20px}
+  .pa-summer-shred .howwin__lead{font-size:22px;margin-bottom:26px}
+}
+
+/* PROBLEM / EXCUSES BLOCK */
+.pa-summer-shred .problem-light{background:#0a0a0a;padding:56px 0;color:#fff}
+.pa-summer-shred .problem-light .container{max-width:1100px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch}
+.pa-summer-shred .problem-light__copy{text-align:left}
+.pa-summer-shred .problem-light__img{position:relative;border-radius:14px;overflow:hidden;min-height:320px}
+.pa-summer-shred .problem-light__img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;position:absolute;inset:0}
+.pa-summer-shred .problem-light p{font-size:16px;color:rgba(255,255,255,0.85);font-weight:500;line-height:1.7;margin-bottom:14px}
+.pa-summer-shred .problem-light p.lead{font-size:20px;font-weight:800;color:#fff}
+.pa-summer-shred .problem-light p.italic-line{font-style:italic;font-weight:700;color:var(--gold);margin:18px 0}
+@media(max-width:768px){
+  .pa-summer-shred .problem-light .container{grid-template-columns:1fr;gap:28px}
+  .pa-summer-shred .problem-light__img{min-height:360px}
+  .pa-summer-shred .problem-light__img img{object-position:center top}
+}
+
+/* WHAT'S INCLUDED */
+.pa-summer-shred .included{background:#fff;padding:60px 0;color:#000}
+.pa-summer-shred .included .container{max-width:980px;margin:0 auto;padding:0 20px}
+.pa-summer-shred .included h2{font-family:'Oswald',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:700;text-align:center;color:var(--text);letter-spacing:.01em;text-transform:uppercase;margin-bottom:40px;line-height:1}
+.pa-summer-shred .included__grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;background:#000;border-radius:18px;padding:36px 40px}
+.pa-summer-shred .included__item{display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:15px;font-weight:600;line-height:1.5;padding:8px 0}
+.pa-summer-shred .included__item::before{content:'\2713';color:var(--gold);font-weight:900;font-size:18px;flex-shrink:0;line-height:1.4}
 
 /* ONE SIZE */
-.pa-summer-shred .ss-onesize{background:#fff;padding:60px 0}
-.pa-summer-shred .ss-onesize .ss-inner{max-width:880px;margin:0 auto;padding:0 20px}
-.pa-summer-shred .ss-onesize__img{margin:0 auto 32px;max-width:760px;border-radius:14px;overflow:hidden}
-.pa-summer-shred .ss-onesize__copy{max-width:760px;margin:0 auto}
-.pa-summer-shred .ss-onesize__copy p{font-size:15px;color:var(--text-secondary);font-weight:500;line-height:1.75;margin:0 0 14px}
-.pa-summer-shred .ss-onesize__copy p strong{color:#000;font-weight:800}
+.pa-summer-shred .onesize{background:#fff;padding:0}
+.pa-summer-shred .onesize__row{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.pa-summer-shred .onesize__row img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;object-position:center;display:block;cursor:pointer}
+.pa-summer-shred .onesize__copy{max-width:880px;margin:0 auto;padding:40px 20px;text-align:left}
+.pa-summer-shred .onesize__copy p{font-size:15px;color:var(--text-secondary);font-weight:500;line-height:1.75;margin-bottom:14px}
+.pa-summer-shred .onesize__copy p strong{color:#000;font-weight:800}
 
-/* EXCUSES */
-.pa-summer-shred .ss-excuses{background:#fff;padding:60px 0;text-align:center}
-.pa-summer-shred .ss-excuses .ss-inner{max-width:1100px;margin:0 auto;padding:0 20px}
-.pa-summer-shred .ss-excuses h2{font-size:clamp(26px,4vw,40px);font-weight:900;color:var(--text);letter-spacing:-.02em;line-height:1.15;margin:0}
-.pa-summer-shred .ss-excuses h2 em{font-style:normal;color:var(--gold-2)}
-.pa-summer-shred .ss-excuse-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
-.pa-summer-shred .ss-excuse-card{background:#0a0a0a;border:1px solid rgba(255,214,10,0.15);border-radius:16px;overflow:hidden;text-align:left}
-.pa-summer-shred .ss-excuse-card__img{width:100%;height:340px;overflow:hidden;cursor:pointer;background:#1a1a1a}
-.pa-summer-shred .ss-excuse-card__img img{width:100%;height:100%;object-fit:cover;object-position:top}
-.pa-summer-shred .ss-excuse-card__text{padding:24px 28px;color:#fff}
-.pa-summer-shred .ss-excuse-card__text strong.ss-name{color:var(--gold);font-size:16px;font-weight:900;display:block;margin-bottom:8px}
-.pa-summer-shred .ss-excuse-card__text p{font-size:15px;color:#fff;line-height:1.55;margin:12px 0 0}
-.pa-summer-shred .ss-excuse-card__text p.ss-q{font-style:italic;color:rgba(255,255,255,0.85)}
-.pa-summer-shred .ss-excuse-card__text strong.ss-lost{color:var(--gold);font-weight:800}
+/* EXCUSES (4 cards) */
+.pa-summer-shred .excuses{background:#fff;padding:24px 0 32px;text-align:center}
+.pa-summer-shred .excuses .container{max-width:1100px;margin:0 auto;padding:0 20px}
+.pa-summer-shred .excuses h2{font-family:'Oswald',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:700;color:var(--text);text-transform:uppercase;line-height:1.05;max-width:920px;margin:0 auto}
+.pa-summer-shred .excuses h2 em{font-style:normal;color:var(--gold-2);display:block;margin-top:6px}
+.pa-summer-shred .excuse-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:20px}
+.pa-summer-shred .excuse-card{background:#0a0a0a;border:1px solid rgba(255,214,10,0.15);border-radius:16px;overflow:hidden;text-align:left;transition:transform .3s}
+.pa-summer-shred .excuse-card:hover{transform:translateY(-4px)}
+.pa-summer-shred .excuse-card__img{width:100%;height:340px;overflow:hidden;cursor:pointer;background:#1a1a1a}
+.pa-summer-shred .excuse-card__img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.pa-summer-shred .excuse-card__text{padding:24px 28px;color:#fff}
+.pa-summer-shred .excuse-card__text strong.name{color:var(--gold);font-size:16px;font-weight:900;display:block;margin-bottom:8px}
+.pa-summer-shred .excuse-card__text p{font-size:15px;color:#fff;line-height:1.55;margin-top:12px}
+.pa-summer-shred .excuse-card__text p.q{font-style:italic;color:rgba(255,255,255,0.85)}
+.pa-summer-shred .excuse-card__text strong.lost{color:var(--gold);font-weight:800}
 
-/* TESTIMONIALS */
-.pa-summer-shred .ss-testi{background:#fff;padding:60px 0}
-.pa-summer-shred .ss-testi .ss-inner{max-width:1100px;margin:0 auto;padding:0 20px}
-.pa-summer-shred .ss-testi h2{font-size:clamp(26px,4vw,40px);font-weight:900;color:var(--text);text-align:center;letter-spacing:-.02em;line-height:1.15;margin:0}
-.pa-summer-shred .ss-testi__sub{text-align:center;font-size:15px;color:#000;font-weight:600;margin:14px auto 0;max-width:720px}
-.pa-summer-shred .ss-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
-.pa-summer-shred .ss-testi-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
-.pa-summer-shred .ss-testi-card__thumb{background:#000;aspect-ratio:9/16}
-.pa-summer-shred .ss-testi-card__body{padding:14px 16px;border-top:1px solid var(--border)}
-.pa-summer-shred .ss-testi-card__name{font-size:14px;font-weight:800;color:var(--text)}
-.pa-summer-shred .ss-testi-card__result{font-size:12px;color:var(--gold-2);font-weight:700;margin-top:4px}
-.pa-summer-shred .ss-testi-card__result::before{content:'\2713  '}
+/* VIDEO TESTIMONIALS */
+.pa-summer-shred .testimonials{background:#fff;padding:24px 0 32px}
+.pa-summer-shred .testimonials .container{max-width:1100px;margin:0 auto;padding:0 20px}
+.pa-summer-shred .testimonials h2{font-family:'Oswald',sans-serif;font-size:clamp(26px,4vw,46px);font-weight:700;color:var(--text);text-align:center;text-transform:uppercase;line-height:1.05;max-width:920px;margin:0 auto}
+.pa-summer-shred .testimonials__sub{text-align:center;font-size:15px;color:#000;font-weight:600;margin-top:14px;max-width:720px;margin-left:auto;margin-right:auto}
+.pa-summer-shred .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.pa-summer-shred .testi-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.pa-summer-shred .testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.08)}
+.pa-summer-shred .testi-card__thumb{background:#000;overflow:hidden}
+.pa-summer-shred .testi-card--hide-mobile{}
+.pa-summer-shred .testi-card__body{padding:14px 16px;border-top:1px solid var(--border)}
+.pa-summer-shred .testi-card__name{font-size:14px;font-weight:800;color:var(--text)}
+.pa-summer-shred .testi-card__result{font-size:12px;color:var(--gold-2);font-weight:700;margin-top:4px;display:flex;align-items:center;gap:5px}
+.pa-summer-shred .testi-card__result::before{content:'\2713';font-size:11px}
 
-/* TRANSFORM */
-.pa-summer-shred .ss-transform{background:#fff;padding:40px 0 60px;text-align:center}
-.pa-summer-shred .ss-transform .ss-inner{max-width:1100px;margin:0 auto;padding:0 20px}
-.pa-summer-shred .ss-transform h2{font-size:clamp(24px,3.6vw,38px);font-weight:900;color:var(--text);letter-spacing:-.02em;line-height:1.2;max-width:820px;margin:0 auto}
-.pa-summer-shred .ss-transform h2 em{font-style:normal;color:var(--gold-2)}
-.pa-summer-shred .ss-transform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
-.pa-summer-shred .ss-transform-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer}
-.pa-summer-shred .ss-transform-card__name{padding:10px 14px;font-size:12px;font-weight:800;text-align:center;border-top:1px solid var(--border)}
+/* TRANSFORMATIONS GRID */
+.pa-summer-shred .transform-section{background:#fff;padding:16px 0 40px}
+.pa-summer-shred .transform-section .container{max-width:1100px;margin:0 auto;padding:0 20px;text-align:center}
+.pa-summer-shred .transform-section h2{font-family:'Oswald',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:700;color:var(--text);text-transform:uppercase;line-height:1.05;max-width:920px;margin:0 auto}
+.pa-summer-shred .transform-section h2 em{font-style:normal;color:var(--gold-2);display:block;margin-top:6px}
+.pa-summer-shred .transform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.pa-summer-shred .transform-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.pa-summer-shred .transform-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,0,0.1)}
+.pa-summer-shred .transform-card img{width:100%;height:auto;display:block;transition:transform .35s}
+.pa-summer-shred .transform-card:hover img{transform:scale(1.04)}
+.pa-summer-shred .transform-card__name{padding:10px 14px;font-size:12px;font-weight:800;text-align:center;border-top:1px solid var(--border)}
+
+/* PRICING (dark) */
+.pa-summer-shred #ss-pricing{scroll-margin-top:56px}
+.pa-summer-shred .pricing{background:#0a0a0a;padding:0;color:#fff}
+.pa-summer-shred .pricing__container{max-width:980px;margin:0 auto;padding:32px 20px}
+.pa-summer-shred .pricing__header{border:2px solid var(--gold);border-radius:14px;padding:22px 24px 24px;text-align:center;margin-bottom:22px}
+.pa-summer-shred .pricing__meta{font-size:12px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.16em;margin-bottom:10px}
+.pa-summer-shred .pricing__price{font-family:'Oswald',sans-serif;font-size:clamp(32px,4.5vw,46px);font-weight:600;color:#fff;line-height:1;margin-bottom:8px}
+.pa-summer-shred .pricing__price span{font-weight:700}
+.pa-summer-shred .pricing__price em{font-style:normal;color:rgba(255,255,255,0.65);font-weight:400;font-size:.6em;margin-left:4px}
+.pa-summer-shred .pricing__guarantee{font-size:14px;color:rgba(255,255,255,0.7);font-weight:500}
+.pa-summer-shred .pricing__grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pa-summer-shred .pricing__card{background:#161616;border:2px solid #2a2a2a;border-radius:14px;padding:24px 24px 22px;position:relative;display:flex;flex-direction:column}
+.pa-summer-shred .pricing__card--featured{border-color:var(--gold)}
+.pa-summer-shred .pricing__badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--gold-grad);color:#000;font-family:'Inter',sans-serif;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:7px 20px;border-radius:22px;white-space:nowrap}
+.pa-summer-shred .pricing__plan{font-size:12px;font-weight:700;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;letter-spacing:.14em}
+.pa-summer-shred .pricing__amount{font-family:'Oswald',sans-serif;font-size:clamp(36px,4.5vw,46px);font-weight:600;color:#fff;line-height:1;margin-bottom:6px}
+.pa-summer-shred .pricing__amount span{font-size:18px;font-weight:500;color:rgba(255,255,255,0.65)}
+.pa-summer-shred .pricing__sub{font-size:13px;color:rgba(255,255,255,0.65);font-weight:500;margin-bottom:18px}
+.pa-summer-shred .pricing__divider{height:1px;background:#2a2a2a;margin:0 -24px 16px}
+.pa-summer-shred .pricing__features{list-style:none;margin:0 0 22px;padding:0}
+.pa-summer-shred .pricing__features li{font-size:14px;color:rgba(255,255,255,0.9);font-weight:500;padding:5px 0;display:flex;align-items:center;gap:10px}
+.pa-summer-shred .pricing__features li::before{content:'\2713';color:rgba(255,255,255,0.4);font-weight:700;font-size:14px;flex-shrink:0}
+.pa-summer-shred .pricing__features--gold li::before{color:var(--gold)}
+.pa-summer-shred .pricing__btn{display:block;text-align:center;background:var(--gold-grad);color:#000;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;padding:14px 20px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,filter .2s;margin-top:auto}
+.pa-summer-shred .pricing__btn:hover{transform:scale(1.02);filter:brightness(1.05)}
+.pa-summer-shred .pricing__btn--outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25)}
+.pa-summer-shred .pricing__btn--outline:hover{border-color:var(--gold);color:var(--gold)}
+.pa-summer-shred .pricing__close-line{font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,32px);color:#fff;font-weight:600;text-transform:uppercase;text-align:center;line-height:1.15;margin-top:22px}
+.pa-summer-shred .pricing__close-line sup{font-size:.55em;vertical-align:super;font-weight:500;text-transform:uppercase;margin-left:1px}
+.pa-summer-shred .pricing__close-line span{display:block;color:var(--gold);font-size:.7em;font-weight:700;margin-top:4px}
+@media(max-width:768px){
+  .pa-summer-shred .pricing__container{padding:24px 16px}
+  .pa-summer-shred .pricing__grid{grid-template-columns:1fr;gap:18px}
+  .pa-summer-shred .pricing__header{padding:18px 18px 20px;margin-bottom:18px}
+  .pa-summer-shred .pricing__card{padding:22px 20px}
+}
 
 /* BOTTOM CTA */
-.pa-summer-shred .ss-bottom{background:#0a0a0a;padding:60px 20px;text-align:center;color:#fff}
-.pa-summer-shred .ss-bottom__eyebrow{font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.pa-summer-shred .ss-bottom h2{font-size:clamp(28px,4.4vw,44px);font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1.15;margin:0 0 24px}
-.pa-summer-shred .ss-bottom__btn{display:inline-block;background:var(--gold-grad);color:#000;font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:18px 40px;border-radius:8px;cursor:pointer;border:none;font-family:'Inter',sans-serif;box-shadow:0 8px 28px rgba(255,184,0,0.35)}
+.pa-summer-shred .bottom-cta{background:#0a0a0a;padding:32px 20px;text-align:center;color:#fff}
+.pa-summer-shred .bottom-cta__eyebrow{font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.pa-summer-shred .bottom-cta h2{font-size:clamp(28px,4.4vw,44px);font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:18px}
+.pa-summer-shred .bottom-cta__btn{display:inline-block;background:var(--gold-grad);color:#000;font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:18px 40px;border-radius:8px;text-decoration:none;transition:transform .2s,filter .2s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.pa-summer-shred .bottom-cta__btn:hover{transform:scale(1.05);filter:brightness(1.08)}
 
 /* FOOTER */
-.pa-summer-shred .ss-footer{background:#000;color:rgba(255,255,255,0.6);padding:40px 20px;text-align:center;font-size:12px}
-.pa-summer-shred .ss-footer img{height:48px;width:auto;display:inline-block;margin:0 auto 12px}
-.pa-summer-shred .ss-footer p{margin:6px 0 0}
+.pa-summer-shred .footer{background:#000;color:rgba(255,255,255,0.6);padding:40px 20px;text-align:center;font-size:12px}
+.pa-summer-shred .footer img{height:48px;width:auto;display:inline-block;margin:0 auto 12px}
+.pa-summer-shred .footer p{margin-top:6px}
 
-/* MODALS */
-.pa-summer-shred .ss-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:99999;display:none;align-items:center;justify-content:center;padding:20px}
-.pa-summer-shred .ss-modal-overlay.ss-active{display:flex}
-.pa-summer-shred .ss-modal{background:#fff;border-radius:14px;width:100%;max-width:900px;max-height:92vh;overflow:hidden;position:relative;display:flex;flex-direction:column}
-.pa-summer-shred .ss-modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;background:rgba(0,0,0,0.06);border:none;border-radius:50%;cursor:pointer;z-index:2}
-.pa-summer-shred .ss-modal-close::before,.pa-summer-shred .ss-modal-close::after{content:'';position:absolute;top:50%;left:50%;width:18px;height:2px;background:#000;margin-left:-9px}
-.pa-summer-shred .ss-modal-close::before{transform:rotate(45deg)}
-.pa-summer-shred .ss-modal-close::after{transform:rotate(-45deg)}
-.pa-summer-shred .ss-modal-content{flex:1;overflow-y:auto}
-.pa-summer-shred .ss-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.94);backdrop-filter:blur(12px);z-index:100000;display:none;align-items:center;justify-content:center;padding:20px}
-.pa-summer-shred .ss-lb-btn{position:absolute;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;font-family:inherit}
-.pa-summer-shred .ss-lb-btn:hover{background:rgba(255,214,10,0.25)}
+/* BOOKING MODAL */
+.pa-summer-shred .booking-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);z-index:9998;opacity:0;transition:opacity .3s ease}
+.pa-summer-shred .booking-overlay.active{display:block;opacity:1}
+.pa-summer-shred .booking-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.95);width:90%;max-width:600px;max-height:90vh;background:#fff;border-radius:12px;z-index:9999;opacity:0;transition:all .3s ease;box-shadow:0 10px 40px rgba(0,0,0,0.3);display:flex;flex-direction:column;overflow:hidden}
+.pa-summer-shred .booking-overlay.active .booking-modal{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.pa-summer-shred .booking-modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;background:rgba(0,0,0,0.06);border:none;border-radius:50%;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center}
+.pa-summer-shred .booking-modal-close::before,.pa-summer-shred .booking-modal-close::after{content:'';position:absolute;width:18px;height:2px;background:#000}
+.pa-summer-shred .booking-modal-close::before{transform:rotate(45deg)}
+.pa-summer-shred .booking-modal-close::after{transform:rotate(-45deg)}
+.pa-summer-shred .booking-modal-content{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+
+/* LIGHTBOX (from pa-ads-landing) */
+.pa-summer-shred #ss-lightbox{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.94);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px}
+.pa-summer-shred .lb-btn{position:absolute;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.pa-summer-shred .lb-btn:hover{background:rgba(255,214,10,0.25)}
 
 /* MOBILE */
 @media(max-width:768px){
-  .pa-summer-shred .ss-hero-bg{min-height:520px;padding:50px 0 50px}
-  .pa-summer-shred .ss-hero__title{font-size:54px;line-height:.92}
-  .pa-summer-shred .ss-champion-grid,
-  .pa-summer-shred .ss-places-grid,
-  .pa-summer-shred .ss-included__grid,
-  .pa-summer-shred .ss-excuse-grid{grid-template-columns:1fr;gap:20px}
-  .pa-summer-shred .ss-included__grid{padding:28px 24px;gap:8px}
-  .pa-summer-shred .ss-excuse-card__img{height:300px}
-  .pa-summer-shred .ss-testi-grid{grid-template-columns:repeat(2,1fr);gap:14px}
-  .pa-summer-shred .ss-transform-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .pa-summer-shred .hero__bg{min-height:640px;padding:150px 0 0;background-position:center top;background-size:cover}
+  .pa-summer-shred .hero__cta{padding:16px 20px;font-size:16px;letter-spacing:.04em;white-space:nowrap}
+  .pa-summer-shred .hero__close-line{font-size:28px;letter-spacing:.03em;margin-top:28px}
+  .pa-summer-shred .hero__title{font-size:54px;line-height:.92}
+  .pa-summer-shred .hero__slash{padding:8px 22px}
+  .pa-summer-shred .hero__slash-inner{font-size:40px;white-space:nowrap}
+  .pa-summer-shred .hero__slash-sub{padding:6px 14px;margin-top:4px}
+  .pa-summer-shred .hero__slash-sub-inner{font-size:13px;letter-spacing:.12em}
+  .pa-summer-shred .hero__bottom-line{font-size:24px;margin-top:6px;line-height:1.15}
+  .pa-summer-shred .hero__bottom-line .hero__bl-break{display:block;height:0;width:100%}
+  .pa-summer-shred .hero__video-wrap{padding:0 0 24px}
+  .pa-summer-shred .hero__sub-title{font-size:13px;letter-spacing:.14em}
+  .pa-summer-shred .hero__headline{font-size:22px;margin:24px auto 20px}
+  .pa-summer-shred .champion__row{grid-template-columns:1fr;gap:20px;margin-bottom:28px}
+  .pa-summer-shred .champion__row--reverse .champion__img-col{order:1}
+  .pa-summer-shred .champion__row--reverse .champion__text-col{order:2}
+  .pa-summer-shred .champion{padding:36px 0 14px}
+  .pa-summer-shred .champion__row:last-child{margin-bottom:0}
+  .pa-summer-shred .champion__cta-wrap{margin-top:14px;margin-bottom:0}
+  .pa-summer-shred .places{padding:0 0 24px}
+  .pa-summer-shred .places .container{padding:0 16px}
+  .pa-summer-shred .places__grid{margin-top:0;padding-top:0}
+  .pa-summer-shred .section-band--lg{padding:20px 14px}
+  .pa-summer-shred .section-band--lg h2{font-size:32px;line-height:1.05}
+  .pa-summer-shred .section-band--lg p{font-size:11px;margin-top:6px}
+  .pa-summer-shred .problem-light{padding:36px 0}
+  .pa-summer-shred .included{padding:40px 0}
+  .pa-summer-shred .onesize{padding:0}
+  .pa-summer-shred .onesize__copy{padding:24px 16px}
+  .pa-summer-shred .excuses{padding:40px 0 16px}
+  .pa-summer-shred .testimonials{padding:8px 0 16px}
+  .pa-summer-shred .testimonials h2{font-size:24px;line-height:1.05}
+  .pa-summer-shred .testimonials__sub{margin-top:8px}
+  .pa-summer-shred .transform-section{padding:8px 0 24px}
+  .pa-summer-shred .transform-section h2{font-size:24px;line-height:1.05}
+  .pa-summer-shred .transform-grid{margin-top:14px}
+  .pa-summer-shred .hero__banner-img{padding:0 16px 14px}
+  .pa-summer-shred .places__grid{grid-template-columns:1fr;gap:18px}
+  .pa-summer-shred .included__grid{grid-template-columns:1fr;padding:28px 24px;gap:8px}
+  .pa-summer-shred .excuse-grid{grid-template-columns:1fr;gap:20px}
+  .pa-summer-shred .excuse-card__img{height:300px}
+  .pa-summer-shred .testi-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .pa-summer-shred .testi-card--hide-mobile{display:none}
+  .pa-summer-shred .transform-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .pa-summer-shred .section-band{padding:14px 16px}
+  .pa-summer-shred .section-band h2{font-size:24px;line-height:1.15}
+  .pa-summer-shred .section-band--lg{padding:26px 16px}
+  .pa-summer-shred .section-band--lg h2{font-size:26px;line-height:1.1}
+  .pa-summer-shred .section-band--lg p{font-size:12px;margin-top:8px}
+  .pa-summer-shred .top-bar{padding:8px 12px;gap:10px}
+  .pa-summer-shred .top-bar__text{font-size:11px}
+  .pa-summer-shred .top-bar__btn{padding:6px 14px;font-size:10px}
 }
 @media(max-width:480px){
-  .pa-summer-shred .ss-hero__title{font-size:42px}
-  .pa-summer-shred .ss-testi-grid{grid-template-columns:1fr}
+  .pa-summer-shred .hero__bg{min-height:540px;padding:130px 0 0}
+  .pa-summer-shred .hero__title{font-size:42px}
+  .pa-summer-shred .hero__headline{font-size:20px}
+  .pa-summer-shred .champion,.pa-summer-shred .places{padding:44px 0}
+  .pa-summer-shred .problem-light,.pa-summer-shred .included{padding:44px 0}
+  .pa-summer-shred .bottom-cta{padding:24px 16px}
+  .pa-summer-shred .excuses{padding:32px 0 12px}
+  .pa-summer-shred .testimonials{padding:8px 0 12px}
+  .pa-summer-shred .transform-section{padding:6px 0 20px}
+  .pa-summer-shred .testi-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .pa-summer-shred .included__grid{padding:24px 20px}
 }
 </style>
 
 <div class="pa-summer-shred">
 
-<!-- TOP BAR -->
-<div class="ss-topbar">
-  <div class="ss-topbar__text"><span class="ss-topbar__dot"></span>Starting 4th May &bull; Limited Spots</div>
-  <a href="javascript:void(0);" onclick="openSummerShredBookingModal()" class="ss-topbar__btn">Book A Call</a>
+<!-- STICKY TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar__text"><span class="top-bar__dot"></span>Starting 4th May Limited Spots Available</div>
+  <a href="javascript:void(0);" onclick="scrollSummerShredToPricing()" class="top-bar__btn">Secure Your Spot</a>
 </div>
 
 <!-- HERO -->
-<section class="ss-hero">
-  <div class="ss-hero-bg">
-    <div class="ss-hero__inner">
-      <div class="ss-hero__eyebrow">16 Week Transformation Challenge</div>
-      <h1 class="ss-hero__title">Summer Shred</h1>
-      <div class="ss-hero__sub">Transform This Summer And Win <span>$3,000 USD</span></div>
+<section class="hero">
+  <div class="hero__bg">
+    <div class="hero__poster" data-reveal>
+      <div class="hero__slash"><span class="hero__slash-inner">Summer Shred</span></div>
+      <br>
+      <div class="hero__slash-sub"><span class="hero__slash-sub-inner">16 Week Transformation Challenge</span></div>
+    </div>
+    <div class="hero__poster-bottom" data-reveal>
+      <div class="hero__bottom-line">Transform This Summer <span class="hero__bl-break"></span>And Win <span>$3,000 USD</span></div>
     </div>
   </div>
-  <div class="ss-hero-video">
-    <div class="ss-hero__inner">
-      <div class="ss-video">
-        <div class="wistia_responsive_padding" style="padding:177.78% 0 0 0;position:relative;">
-          <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-            <div class="wistia_embed wistia_async_zqykcwwyzs videoFoam=true" style="height:100%;position:relative;width:100%"></div>
-          </div>
-        </div>
+  <div class="hero__video-wrap">
+    <div class="container">
+      <div class="video-wrap" data-reveal>
+        <script src="https://fast.wistia.com/embed/4vxl5gk6ti.js" async type="module"></script>
+        <style>wistia-player[media-id='4vxl5gk6ti']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/4vxl5gk6ti/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
+        <wistia-player media-id="4vxl5gk6ti" aspect="1.7777777777777777"></wistia-player>
       </div>
-      <div class="ss-hero__close-line">Sign Up Closes <strong>30th April</strong></div>
-      <div><a href="javascript:void(0);" onclick="openSummerShredCheckout()" class="ss-hero__cta">Secure Your Spot From $99/Week</a></div>
     </div>
   </div>
 </section>
+
+<!-- PRICING (top) -->
+<section class="pricing" id="ss-pricing">
+  <div class="pricing__container">
+    <div class="pricing__header">
+      <div class="pricing__meta">16 Weeks &middot; 1-on-1 Coaching &middot; $3,000 Prize</div>
+      <div class="pricing__price">From <span>$99</span><em>/ week</em></div>
+      <div class="pricing__guarantee">Guaranteed results or your money back</div>
+    </div>
+    <div class="pricing__grid">
+      <div class="pricing__card">
+        <div class="pricing__plan">Payment Plan</div>
+        <div class="pricing__amount">$117 <span>/ week</span></div>
+        <div class="pricing__sub">4 payments of $469 &middot; $1,879 total</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features">
+          <li>Spread cost over 4 months</li>
+          <li>Full 16 week programme</li>
+          <li>1-on-1 coaching</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/summer-shred-2026" class="pricing__btn pricing__btn--outline">Pay Monthly</a>
+      </div>
+      <div class="pricing__card pricing__card--featured">
+        <div class="pricing__badge">Best Value &middot; Save $295</div>
+        <div class="pricing__plan">Pay In Full</div>
+        <div class="pricing__amount">$99 <span>/ week</span></div>
+        <div class="pricing__sub">One single payment of $1,584</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features pricing__features--gold">
+          <li>Best price guaranteed</li>
+          <li>Full 16 week programme</li>
+          <li>1-on-1 coaching</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/summer-shred-2026-full" class="pricing__btn">Pay In Full</a>
+      </div>
+    </div>
+    <div class="pricing__close-line">Sign Up Closes 30<sup>th</sup> April <span>Spots Are Limited</span></div>
+  </div>
+</section>
+
+<!-- BANNER IMAGE (below pricing) -->
+<div style="background:#0a0a0a"><div class="hero__banner-img" style="background:#0a0a0a">
+  <img src="https://physique-academy.s3.amazonaws.com/summer-shred/hero-02.jpg" alt="Summer Shred" loading="lazy">
+</div></div>
 
 <!-- 2025 CHAMPION BAND -->
-<div class="ss-band"><h2>2025 Champion &ldquo;Life Changing&rdquo;</h2></div>
+<section class="champion-band">
+  <div class="champion-band__inner">
+    <div class="champion-band__trophy">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 3h10v2h3v4c0 2.21-1.79 4-4 4h-.08A5.002 5.002 0 0 1 13 16.9V19h3v2H8v-2h3v-2.1A5.002 5.002 0 0 1 7.08 13H7c-2.21 0-4-1.79-4-4V5h4V3zm10 4V5H7v2c0 2.21 1.79 4 4 4h2c2.21 0 4-1.79 4-4z"/></svg>
+    </div>
+    <div class="champion-band__year">2025 Champion</div>
+    <div class="champion-band__quote">&ldquo;Life Changing&rdquo;</div>
+  </div>
+</section>
 
-<!-- CHAMPION -->
-<section class="ss-dark">
-  <div class="ss-inner">
-    <div class="ss-champion-grid">
-      <div class="ss-champion-imgs">
-        <img src="https://via.placeholder.com/500x650/1a1a1a/FFD60A?text=Laurence+Before" alt="Laurence before">
-        <img src="https://via.placeholder.com/500x650/1a1a1a/FFD60A?text=Laurence+After" alt="Laurence after">
+<!-- CHAMPION SECTION -->
+<section class="champion">
+  <div class="container">
+    <!-- Row 1: image left, quote right -->
+    <div class="champion__row">
+      <div class="champion__img-col">
+        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-01.webp" alt="Laurence transformation" loading="lazy" onclick="openSummerShredImg(this)">
       </div>
-      <div>
-        <div class="ss-quote">
+      <div class="champion__text-col">
+        <div class="champion__quote">
           <p>&ldquo;At first I was in shock, then it slowly sunk in and I couldn&rsquo;t stop smiling! I knew I&rsquo;d accomplished something I&rsquo;d been putting off for a long time, and the fact that it was in a competition was recognition of the sheer hard work I&rsquo;d put in over the past 16 weeks. It means everything to me.&rdquo;</p>
-          <cite>&mdash; Laurence</cite>
+          <cite>Laurence</cite>
         </div>
-        <div class="ss-champion-body">
-          <p>Laurence was <strong>232lbs</strong> and didn't recognise the man looking back at him in the mirror. Clothes that used to fit were not anymore. He was relying heavily on food and drink just to manage stress.</p>
-          <p>He knew he needed to do something about it, he just kept putting it off. <strong>Then he stopped waiting.</strong></p>
-          <p>16 weeks later, <strong>50 pounds lost</strong>, personal running records broken, and a massive cash prize in his pocket.</p>
-          <p>But when we spoke to him after the challenge, the massive cash prize wasn't even mentioned...</p>
-          <div class="ss-quote-2"><p>&ldquo;I can't operate in the day without a morning run. I love to train harder than ever. I see myself differently. I see the world differently too. Coach Danny and Physique Academy have changed my life!&rdquo;</p></div>
-          <p style="color:#fff">That's what this challenge actually does. The weight comes off, the confidence comes back, and the man you've been putting off becoming finally shows up.</p>
+      </div>
+    </div>
+    <!-- Row 2: text left, image right -->
+    <div class="champion__row champion__row--reverse">
+      <div class="champion__img-col">
+        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-02.webp" alt="Laurence transformation" loading="lazy" onclick="openSummerShredImg(this)">
+      </div>
+      <div class="champion__text-col">
+        <p>Laurence was <strong>232lbs</strong> and didn't recognise the man looking back at him in the mirror. Clothes that used to fit were not anymore. He was relying heavily on food and drink just to manage stress.</p>
+        <p>He knew he needed to do something about it, he just kept putting it off. <strong>Then he stopped waiting.</strong></p>
+        <p><strong>16 weeks later, 50 pounds lost</strong>, personal running records broken, and a massive cash prize in his pocket.</p>
+      </div>
+    </div>
+    <!-- Row 3: image left, text + second quote + CTA right -->
+    <div class="champion__row">
+      <div class="champion__img-col">
+        <img src="https://physique-academy.s3.amazonaws.com/summer-shred/lawrence-03.webp" alt="Laurence transformation" loading="lazy" onclick="openSummerShredImg(this)">
+      </div>
+      <div class="champion__text-col">
+        <p>But when we spoke to him after the challenge, the massive cash prize wasn't even mentioned...</p>
+        <div class="champion__second-quote">
+          <p>&ldquo;I can't operate in the day without a morning run. I love to train harder than ever. I see myself differently. I see the world differently too. Coach Danny and Physique Academy have changed my life!&rdquo;</p>
+        </div>
+        <p>That's what this challenge actually does. The weight comes off, the confidence comes back, and <strong>the man you've been putting off becoming finally shows up.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE STARTS BAND -->
+<div class="section-band section-band--lg">
+  <h2>Challenge Starts 4th May</h2>
+  <p>Now is the best time to get in shape for summer</p>
+</div>
+
+<!-- 2ND / 3RD PLACE -->
+<section class="places">
+  <div class="container">
+    <div class="places__grid">
+      <div class="place-card">
+        <div class="place-card__title">2nd Place Fraser</div>
+        <div class="place-card__images">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fraser-01.webp" alt="Fraser" loading="lazy" onclick="openSummerShredImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fraser-02.webp" alt="Fraser" loading="lazy" onclick="openSummerShredImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fraser-03.webp" alt="Fraser" loading="lazy" onclick="openSummerShredImg(this)">
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card__title">3rd Place Ulrich</div>
+        <div class="place-card__images">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/ulrich-01.webp" alt="Ulrich" loading="lazy" onclick="openSummerShredImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/ulrich-02.webp" alt="Ulrich" loading="lazy" onclick="openSummerShredImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/summer-shred/ulrich-03.webp" alt="Ulrich" loading="lazy" onclick="openSummerShredImg(this)">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA STRIPE -->
-<div class="ss-stripe">
-  <div class="ss-stripe__small">Sign Up Closes 30th April</div>
-  <a href="javascript:void(0);" onclick="openSummerShredCheckout()" class="ss-stripe__btn">Secure Your Spot From $99/Week</a>
+<!-- HOW TO WIN BAND -->
+<div class="section-band section-band--lg">
+  <h2>How Do You Win $3,000?</h2>
 </div>
 
-<!-- CHALLENGE STARTS BAND -->
-<div class="ss-band"><h2>Challenge Starts 4th May</h2><p>Now is the best time to get in shape for summer</p></div>
-
-<!-- PLACES -->
-<section class="ss-dark">
-  <div class="ss-inner">
-    <div class="ss-places-grid">
-      <div class="ss-place">
-        <div class="ss-place__title">2nd Place &mdash; Fraser</div>
-        <div class="ss-place__imgs">
-          <img src="https://via.placeholder.com/400x500/1a1a1a/FFD60A?text=Fraser+Before" alt="Fraser before">
-          <img src="https://via.placeholder.com/400x500/1a1a1a/FFD60A?text=Fraser+After" alt="Fraser after">
-        </div>
+<!-- HOW TO WIN -->
+<section class="howwin">
+  <div class="container">
+    <p class="howwin__lead">Simple. <em>Beat the person you were on day one.</em></p>
+    <div class="howwin__steps">
+      <div class="howwin__step">
+        <div class="howwin__step-num">1</div>
+        <h3>It's Not A Bodybuilding Contest</h3>
+        <p>This isn't a bodybuilding competition. We're not lining you up against anyone else. The guy who starts at 310lbs and the guy who starts at 190lbs are playing a completely different game and we judge them that way.</p>
       </div>
-      <div class="ss-place">
-        <div class="ss-place__title">3rd Place &mdash; Ulrich</div>
-        <div class="ss-place__imgs">
-          <img src="https://via.placeholder.com/400x500/1a1a1a/FFD60A?text=Ulrich+Before" alt="Ulrich before">
-          <img src="https://via.placeholder.com/400x500/1a1a1a/FFD60A?text=Ulrich+After" alt="Ulrich after">
-        </div>
+      <div class="howwin__step">
+        <div class="howwin__step-num">2</div>
+        <h3>The Biggest Change Wins</h3>
+        <p>What we're looking at is your transformation. Physique change, weight dropped, visible muscle gained, all measured against your own starting point. The biggest change wins. Not the best physique.</p>
+      </div>
+      <div class="howwin__step">
+        <div class="howwin__step-num">3</div>
+        <h3>Top 3 Go To Public Vote</h3>
+        <p>All of our coaches will review all submissions through an in-house voting system and select the top 3 transformations. Those 3 then go to a public vote where the audience decides the winner.</p>
       </div>
     </div>
+    <div class="howwin__prize">
+      <div class="howwin__prize-amount">$3,000</div>
+      <div class="howwin__prize-sub">Which means the $3,000 is genuinely up for grabs for anyone who walks through the door.</div>
+    </div>
+    <div style="text-align:center;margin:0 0 20px">
+      <a href="javascript:void(0);" onclick="scrollSummerShredToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
+    </div>
+    <p class="howwin__closing">But between you and us, <strong>every man who finishes this challenge already wins something far more valuable than three grand.</strong></p>
+    <p class="howwin__footnote">Guidelines on before and after images will be provided by your coach.</p>
   </div>
 </section>
 
 <!-- THIS SUMMER BAND -->
-<div class="ss-band"><h2>This Summer Doesn&rsquo;t Have To Look Like The Last One</h2></div>
+<div class="section-band">
+  <h2>This Summer Doesn&rsquo;t Have To Look Like The Last One</h2>
+</div>
 
 <!-- PROBLEM LIGHT -->
-<section class="ss-problem">
-  <div class="ss-inner">
-    <p class="ss-lead">Be honest with yourself for a second.</p>
-    <p>Are you avoiding the beach because of how you feel in your body?</p>
-    <p>Do you find yourself saying no to things you actually want to do?</p>
-    <p>Are you tired by midday, relying on caffeine and convenience food just to get through it?</p>
-    <p>When your kids want to run around, are you already looking for a reason to sit it out?</p>
-    <p class="ss-italic">That's not just a fitness problem. That's your quality of life.</p>
-    <p>The men who did something about it last year didn't have better genetics or more time. They just made a decision and had the right people behind them.</p>
-    <p class="ss-bold">This is your chance to do the same.</p>
+<section class="problem-light">
+  <div class="container">
+    <div class="problem-light__copy">
+      <p class="lead">Be honest with yourself for a second.</p>
+      <p>Are you avoiding the beach because of how you feel in your body?</p>
+      <p>Do you find yourself saying no to things you actually want to do?</p>
+      <p>Are you tired by midday, relying on caffeine and convenience food just to get through it?</p>
+      <p>When your kids want to run around, are you already looking for a reason to sit it out?</p>
+      <p class="italic-line">That's not just a fitness problem. That's your quality of life.</p>
+      <p>The men who did something about it last year didn't have better genetics or more time. They just made a decision and had the right people behind them.</p>
+      <p style="font-weight:800;margin-top:18px">This is your chance to do the same.</p>
+    </div>
+    <div class="problem-light__img">
+      <img src="https://physique-academy.s3.amazonaws.com/summer-shred/george-on-the-beach.webp" alt="George training" loading="lazy">
+    </div>
   </div>
 </section>
 
 <!-- CTA STRIPE -->
-<div class="ss-stripe">
-  <div class="ss-stripe__small">Limited Spots Available</div>
-  <a href="javascript:void(0);" onclick="openSummerShredCheckout()" class="ss-stripe__btn">Secure Your Spot From $99/Week</a>
+<div class="cta-stripe">
+  <div class="cta-stripe__small">Sign Up Closes 30<sup>th</sup> April &middot; <span>Spots Are Limited</span></div>
+  <a href="javascript:void(0);" onclick="scrollSummerShredToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
 </div>
 
-<!-- INCLUDED -->
-<section class="ss-included">
-  <div class="ss-inner">
+<!-- WHAT'S INCLUDED -->
+<section class="included">
+  <div class="container">
     <h2>What&rsquo;s Included</h2>
-    <div class="ss-included__grid">
-      <div class="ss-included__item">100% customised nutrition programme</div>
-      <div class="ss-included__item">Full 16-week custom training plan</div>
-      <div class="ss-included__item">A dedicated coach matched to your goals and training style</div>
-      <div class="ss-included__item">Weekly video check-ins with feedback and programme adjustments</div>
-      <div class="ss-included__item">Fat loss, muscle gain, performance and endurance plans available</div>
-      <div class="ss-included__item">Flexible dieting or structured meal plan</div>
-      <div class="ss-included__item">Supplement guidance</div>
-      <div class="ss-included__item">WhatsApp support throughout</div>
-      <div class="ss-included__item">Zoom calls whenever you need them</div>
-      <div class="ss-included__item">Community group access</div>
-      <div class="ss-included__item">Mental health support via a trusted therapist</div>
+    <div class="included__grid">
+      <div class="included__item">100% customised nutrition programme</div>
+      <div class="included__item">Full 16-week custom training plan</div>
+      <div class="included__item">A dedicated coach matched to your goals and training style</div>
+      <div class="included__item">Weekly video check-ins with feedback and programme adjustments</div>
+      <div class="included__item">Fat loss, muscle gain, performance and endurance plans available</div>
+      <div class="included__item">Flexible dieting or structured meal plan</div>
+      <div class="included__item">Supplement guidance</div>
+      <div class="included__item">WhatsApp support throughout</div>
+      <div class="included__item">Zoom calls whenever you need them</div>
+      <div class="included__item">Community group access</div>
+      <div class="included__item">Mental health support via a trusted therapist</div>
     </div>
   </div>
 </section>
 
 <!-- ONE SIZE BAND -->
-<div class="ss-band"><h2>One Size Does Not Fit All</h2><p>Whether you bodybuild, calisthenics, CrossFit, or Hyrox training, we have a coach for you</p></div>
+<div class="section-band section-band--lg">
+  <h2>One Size Does Not Fit All</h2>
+  <p>Whether you bodybuild, calisthenics, CrossFit, or Hyrox training, we have a coach for you</p>
+</div>
 
 <!-- ONE SIZE -->
-<section class="ss-onesize">
-  <div class="ss-inner">
-    <div class="ss-onesize__img"><img src="https://via.placeholder.com/760x420/0a0a0a/FFD60A?text=One+Size+Does+Not+Fit+All" alt="One size does not fit all"></div>
-    <div class="ss-onesize__copy">
-      <p>Most programmes fail for the same reason. They ask you to do things you hate, eat in a way that doesn't suit you, and fit your life around a plan instead of the other way around.</p>
-      <p><strong>We do it differently.</strong></p>
-      <p>You will get a coach based on your lifestyle and training preferences, building your training and nutrition around your lifestyle, your preferences, and what you can realistically sustain.</p>
-      <p><strong>Not just for 16 weeks, but beyond it.</strong></p>
-      <p>The goal isn't to get you to the finish line. It's to make sure you never need to start over again.</p>
-    </div>
+<section class="onesize">
+  <div class="onesize__row">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-01.webp" alt="One Size Does Not Fit All" loading="lazy">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-02.webp" alt="One Size Does Not Fit All" loading="lazy">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-03.webp" alt="One Size Does Not Fit All" loading="lazy">
+  </div>
+  <div class="onesize__copy">
+    <p>Most programmes fail for the same reason. They ask you to do things you hate, eat in a way that doesn't suit you, and fit your life around a plan instead of the other way around.</p>
+    <p><strong>We do it differently.</strong></p>
+    <p>You will get a coach based on your lifestyle and training preferences, building your training and nutrition around your lifestyle, your preferences, and what you can realistically sustain.</p>
+    <p><strong>Not just for 16 weeks, but beyond it.</strong></p>
+    <p>The goal isn't to get you to the finish line. It's to make sure you never need to start over again.</p>
+  </div>
+  <div class="onesize__row">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-04.webp" alt="One Size Does Not Fit All" loading="lazy">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-05.webp" alt="One Size Does Not Fit All" loading="lazy">
+    <img src="https://physique-academy.s3.amazonaws.com/summer-shred/fit-all-06.webp" alt="One Size Does Not Fit All" loading="lazy">
   </div>
 </section>
 
 <!-- CTA STRIPE -->
-<div class="ss-stripe">
-  <div class="ss-stripe__small">Limited Spots Available</div>
-  <a href="javascript:void(0);" onclick="openSummerShredCheckout()" class="ss-stripe__btn">Secure Your Spot From $99/Week</a>
+<div class="cta-stripe">
+  <div class="cta-stripe__small">Sign Up Closes 30<sup>th</sup> April &middot; <span>Spots Are Limited</span></div>
+  <a href="javascript:void(0);" onclick="scrollSummerShredToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
 </div>
 
 <!-- EXCUSES -->
-<section class="ss-excuses">
-  <div class="ss-inner">
+<section class="excuses">
+  <div class="container">
     <h2>Your Excuses Are Valid.<br><em>They Just Aren&rsquo;t Good Enough</em></h2>
-    <div class="ss-excuse-grid">
-      <div class="ss-excuse-card">
-        <div class="ss-excuse-card__img" onclick="openSummerShredExcuseImg(this)"><img src="https://via.placeholder.com/500x600/1a1a1a/FFD60A?text=Ross+45" alt="Ross 45"></div>
-        <div class="ss-excuse-card__text">
-          <strong class="ss-name">Ross, 45</strong>
+    <div class="excuse-grid">
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openSummerShredExcuseImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/landing-pages/ross.webp" alt="Ross, 45" loading="lazy">
+        </div>
+        <div class="excuse-card__text">
+          <strong class="name">Ross, 45</strong>
           <p>Was raising two kids alone and caring for his father through late-stage Parkinson&rsquo;s.</p>
-          <p class="ss-q">&ldquo;Most men would have come up with plenty of excuses in this situation. Ross used it as a reason. <strong class="ss-lost">He lost 50lbs.</strong>&rdquo;</p>
+          <p class="q">&ldquo;Most men would have come up with plenty of excuses in this situation. Ross used it as a reason. <strong class="lost">He lost 50lbs.</strong>&rdquo;</p>
         </div>
       </div>
-      <div class="ss-excuse-card">
-        <div class="ss-excuse-card__img" onclick="openSummerShredExcuseImg(this)"><img src="https://via.placeholder.com/500x600/1a1a1a/FFD60A?text=Jonathan" alt="Jonathan"></div>
-        <div class="ss-excuse-card__text">
-          <strong class="ss-name">Jonathan</strong>
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openSummerShredExcuseImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/landing-pages/johnathan.webp" alt="Jonathan" loading="lazy">
+        </div>
+        <div class="excuse-card__text">
+          <strong class="name">Jonathan</strong>
           <p>Hadn&rsquo;t looked at himself in the mirror with his shirt off in over 4 years.</p>
-          <p class="ss-q">&ldquo;It was costing him his confidence. He quietly stopped pursuing. <strong class="ss-lost">He lost 49lbs. He got it all back.</strong>&rdquo;</p>
+          <p class="q">&ldquo;It was costing him his confidence. He quietly stopped pursuing. <strong class="lost">He lost 49lbs. He got it all back.</strong>&rdquo;</p>
         </div>
       </div>
-      <div class="ss-excuse-card">
-        <div class="ss-excuse-card__img" onclick="openSummerShredExcuseImg(this)"><img src="https://via.placeholder.com/500x600/1a1a1a/FFD60A?text=Sean+46" alt="Sean 46"></div>
-        <div class="ss-excuse-card__text">
-          <strong class="ss-name">Sean, 46</strong>
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openSummerShredExcuseImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/landing-pages/sean.webp" alt="Sean, 46" loading="lazy">
+        </div>
+        <div class="excuse-card__text">
+          <strong class="name">Sean, 46</strong>
           <p>Had been consistently training for 13 years but had nothing to show for it.</p>
-          <p class="ss-q">&ldquo;Despite being a father of 3 kids and working long hours on his business, <strong class="ss-lost">he lost 58lbs.</strong>&rdquo;</p>
+          <p class="q">&ldquo;Despite being a father of 3 kids and working long hours on his business, <strong class="lost">he lost 58lbs.</strong>&rdquo;</p>
         </div>
       </div>
-      <div class="ss-excuse-card">
-        <div class="ss-excuse-card__img" onclick="openSummerShredExcuseImg(this)"><img src="https://via.placeholder.com/500x600/1a1a1a/FFD60A?text=Marc+53" alt="Marc 53"></div>
-        <div class="ss-excuse-card__text">
-          <strong class="ss-name">Marc, 53</strong>
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openSummerShredExcuseImg(this)">
+          <img src="https://physique-academy.s3.amazonaws.com/landing-pages/marc.webp" alt="Marc, 53" loading="lazy">
+        </div>
+        <div class="excuse-card__text">
+          <strong class="name">Marc, 53</strong>
           <p>Thought it was his age and hadn&rsquo;t run a single mile in his life.</p>
-          <p class="ss-q">&ldquo;Six months later, he placed 3rd in his age group at a 5K and completed a half marathon. <strong class="ss-lost">He lost 45lbs.</strong>&rdquo;</p>
+          <p class="q">&ldquo;Six months later, he placed 3rd in his age group at a 5K and completed a half marathon. <strong class="lost">He lost 45lbs.</strong>&rdquo;</p>
         </div>
       </div>
     </div>
@@ -410,77 +742,155 @@ article:has(.pa-summer-shred),
 </section>
 
 <!-- CTA STRIPE -->
-<div class="ss-stripe">
-  <div class="ss-stripe__small">Limited Spots Available</div>
-  <a href="javascript:void(0);" onclick="openSummerShredCheckout()" class="ss-stripe__btn">Secure Your Spot From $99/Week</a>
+<div class="cta-stripe">
+  <div class="cta-stripe__small">Sign Up Closes 30<sup>th</sup> April &middot; <span>Spots Are Limited</span></div>
+  <a href="javascript:void(0);" onclick="scrollSummerShredToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
 </div>
 
-<!-- TESTIMONIALS -->
-<section class="ss-testi">
-  <div class="ss-inner">
+<!-- VIDEO TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
     <h2>Hear It Directly From Men Who Got Tired Of Waiting And Did Something About It</h2>
-    <p class="ss-testi__sub">Busy schedules. Demanding jobs. Young kids. Every reason not to start. They did it anyway.</p>
-    <div class="ss-testi-grid">
-      <div class="ss-testi-card"><div class="ss-testi-card__thumb"></div><div class="ss-testi-card__body"><div class="ss-testi-card__name">Michael L</div><div class="ss-testi-card__result">Lost 50lbs</div></div></div>
-      <div class="ss-testi-card"><div class="ss-testi-card__thumb"></div><div class="ss-testi-card__body"><div class="ss-testi-card__name">Tyrone E</div><div class="ss-testi-card__result">Lost 50lbs</div></div></div>
-      <div class="ss-testi-card"><div class="ss-testi-card__thumb"></div><div class="ss-testi-card__body"><div class="ss-testi-card__name">Ramirez H</div><div class="ss-testi-card__result">Lost 50lbs</div></div></div>
+    <p class="testimonials__sub">Busy schedules. Demanding jobs. Young kids. Every reason not to start. They did it anyway.</p>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/jei0l7w6a6.js" async type="module"></script><style>wistia-player[media-id='jei0l7w6a6']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/jei0l7w6a6/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="jei0l7w6a6" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Ross G</div><div class="testi-card__result">Coach Dylan</div></div></div>
+      <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/d8cx2zce1z.js" async type="module"></script><style>wistia-player[media-id='d8cx2zce1z']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/d8cx2zce1z/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="d8cx2zce1z" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Matt B</div><div class="testi-card__result">Coach Zayne</div></div></div>
+      <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/9orynwixys.js" async type="module"></script><style>wistia-player[media-id='9orynwixys']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/9orynwixys/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="9orynwixys" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Hans R</div><div class="testi-card__result">Coach Kris</div></div></div>
+      <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/ifoqglwzfq.js" async type="module"></script><style>wistia-player[media-id='ifoqglwzfq']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ifoqglwzfq/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="ifoqglwzfq" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Marc K</div><div class="testi-card__result">Coach Ash</div></div></div>
+      <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/nnprr1iri3.js" async type="module"></script><style>wistia-player[media-id='nnprr1iri3']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/nnprr1iri3/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="nnprr1iri3" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Joe S</div><div class="testi-card__result">Coach Kris</div></div></div>
+      <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/165dgjhcwx.js" async type="module"></script><style>wistia-player[media-id='165dgjhcwx']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/165dgjhcwx/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="165dgjhcwx" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Rob J</div><div class="testi-card__result">Coach Connor</div></div></div>
+      <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/1dty3go11t.js" async type="module"></script><style>wistia-player[media-id='1dty3go11t']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/1dty3go11t/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="1dty3go11t" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Damien B</div><div class="testi-card__result">Coach Ash</div></div></div>
+      <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/esbpyv2wsa.js" async type="module"></script><style>wistia-player[media-id='esbpyv2wsa']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/esbpyv2wsa/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="esbpyv2wsa" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Craig D</div><div class="testi-card__result">Coach Sam</div></div></div>
+      <div class="testi-card testi-card--hide-mobile"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/ebvfprszvt.js" async type="module"></script><style>wistia-player[media-id='ebvfprszvt']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ebvfprszvt/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="ebvfprszvt" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Chris M</div><div class="testi-card__result">Coach Kris</div></div></div>
     </div>
   </div>
 </section>
+
+<!-- BANNER IMAGE -->
+<div class="hero__banner-img" style="background:#fff">
+  <img src="https://physique-academy.s3.amazonaws.com/summer-shred/hero-01.webp" alt="Summer Shred" loading="lazy">
+</div>
 
 <!-- TRANSFORMATIONS -->
-<section class="ss-transform">
-  <div class="ss-inner">
+<section class="transform-section">
+  <div class="container">
     <h2>The difference between these men and the ones still stuck...<br><em>They took action.</em></h2>
-    <div class="ss-transform-grid">
-      <div class="ss-transform-card" onclick="openSummerShredLightbox(0)"><img src="https://via.placeholder.com/300x375/eee/333?text=Transformation+1" alt="Transformation 1"><div class="ss-transform-card__name">Lost 50lbs</div></div>
-      <div class="ss-transform-card" onclick="openSummerShredLightbox(1)"><img src="https://via.placeholder.com/300x375/eee/333?text=Transformation+2" alt="Transformation 2"><div class="ss-transform-card__name">Lost 45lbs</div></div>
-      <div class="ss-transform-card" onclick="openSummerShredLightbox(2)"><img src="https://via.placeholder.com/300x375/eee/333?text=Transformation+3" alt="Transformation 3"><div class="ss-transform-card__name">Lost 60lbs</div></div>
-      <div class="ss-transform-card" onclick="openSummerShredLightbox(3)"><img src="https://via.placeholder.com/300x375/eee/333?text=Transformation+4" alt="Transformation 4"><div class="ss-transform-card__name">Lost 55lbs</div></div>
+    <div class="transform-grid">
+      <div class="transform-card" onclick="openSummerShredLightbox(0)"><img src="https://physique-academy.s3.amazonaws.com/transformations/mike-teagle.webp" alt="Mike Teagle" loading="lazy"><div class="transform-card__name">Mike Teagle</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(1)"><img src="https://physique-academy.s3.amazonaws.com/transformations/alessandro-cusuman.webp" alt="Alessandro Cusuman" loading="lazy"><div class="transform-card__name">Alessandro Cusuman</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(2)"><img src="https://physique-academy.s3.amazonaws.com/transformations/andre-hoffman.webp" alt="Andre Hoffman" loading="lazy"><div class="transform-card__name">Andre Hoffman</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(3)"><img src="https://physique-academy.s3.amazonaws.com/transformations/chris-hadley.webp" alt="Chris Hadley" loading="lazy"><div class="transform-card__name">Chris Hadley</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(4)"><img src="https://physique-academy.s3.amazonaws.com/transformations/chris-tiloltson.webp" alt="Chris Tiloltson" loading="lazy"><div class="transform-card__name">Chris Tiloltson</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(5)"><img src="https://physique-academy.s3.amazonaws.com/transformations/daniel-mcdonald.webp" alt="Daniel McDonald" loading="lazy"><div class="transform-card__name">Daniel McDonald</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(6)"><img src="https://physique-academy.s3.amazonaws.com/transformations/darvin-legaspi.webp" alt="Darvin Legaspi" loading="lazy"><div class="transform-card__name">Darvin Legaspi</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(7)"><img src="https://physique-academy.s3.amazonaws.com/transformations/john-martin.webp" alt="John Martin" loading="lazy"><div class="transform-card__name">John Martin</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(8)"><img src="https://physique-academy.s3.amazonaws.com/transformations/joush-hutton.webp" alt="Joush Hutton" loading="lazy"><div class="transform-card__name">Joush Hutton</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(9)"><img src="https://physique-academy.s3.amazonaws.com/transformations/magnus-stohle.webp" alt="Magnus Stohle" loading="lazy"><div class="transform-card__name">Magnus Stohle</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(10)"><img src="https://physique-academy.s3.amazonaws.com/transformations/matt-barr.webp" alt="Matt Barr" loading="lazy"><div class="transform-card__name">Matt Barr</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(11)"><img src="https://physique-academy.s3.amazonaws.com/transformations/nigel-perera.webp" alt="Nigel Perera" loading="lazy"><div class="transform-card__name">Nigel Perera</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(12)"><img src="https://physique-academy.s3.amazonaws.com/transformations/ross-atkins.webp" alt="Ross Atkins" loading="lazy"><div class="transform-card__name">Ross Atkins</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(13)"><img src="https://physique-academy.s3.amazonaws.com/transformations/sam-lightfoot.webp" alt="Sam Lightfoot" loading="lazy"><div class="transform-card__name">Sam Lightfoot</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(14)"><img src="https://physique-academy.s3.amazonaws.com/transformations/tim-russell.webp" alt="Tim Russell" loading="lazy"><div class="transform-card__name">Tim Russell</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(15)"><img src="https://physique-academy.s3.amazonaws.com/transformations/tom-collins.webp" alt="Tom Collins" loading="lazy"><div class="transform-card__name">Tom Collins</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(16)"><img src="https://physique-academy.s3.amazonaws.com/transformations/tommy-cindahl.webp" alt="Tommy Cindahl" loading="lazy"><div class="transform-card__name">Tommy Cindahl</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(17)"><img src="https://physique-academy.s3.amazonaws.com/transformations/jason-wilson.webp" alt="Jason Wilson" loading="lazy"><div class="transform-card__name">Jason Wilson</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(18)"><img src="https://physique-academy.s3.amazonaws.com/transformations/craig-dinblebee.webp" alt="Craig Dimblebee" loading="lazy"><div class="transform-card__name">Craig Dimblebee</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(19)"><img src="https://physique-academy.s3.amazonaws.com/transformations/damien-barr.webp" alt="Damian Barr" loading="lazy"><div class="transform-card__name">Damian Barr</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(20)"><img src="https://physique-academy.s3.amazonaws.com/transformations/dave-hanrahan.webp" alt="Dave Hanrahan" loading="lazy"><div class="transform-card__name">Dave Hanrahan</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(21)"><img src="https://physique-academy.s3.amazonaws.com/transformations/tony-kopa.webp" alt="Tony Kopa" loading="lazy"><div class="transform-card__name">Tony Kopa</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(22)"><img src="https://physique-academy.s3.amazonaws.com/transformations/federico-testa.webp" alt="Federico Testa" loading="lazy"><div class="transform-card__name">Federico Testa</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(23)"><img src="https://physique-academy.s3.amazonaws.com/transformations/joe-smithey.webp" alt="Joe Smithey" loading="lazy"><div class="transform-card__name">Joe Smithey</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(24)"><img src="https://physique-academy.s3.amazonaws.com/transformations/reed-burton.webp" alt="Reed Burton" loading="lazy"><div class="transform-card__name">Reed Burton</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(25)"><img src="https://physique-academy.s3.amazonaws.com/transformations/ricardo-escobedo.webp" alt="Ricardo Escobedo" loading="lazy"><div class="transform-card__name">Ricardo Escobedo</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(26)"><img src="https://physique-academy.s3.amazonaws.com/transformations/russell-smalley.webp" alt="Russell Smalley" loading="lazy"><div class="transform-card__name">Russell Smalley</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(27)"><img src="https://physique-academy.s3.amazonaws.com/transformations/steven-manirath.webp" alt="Steven Manirath" loading="lazy"><div class="transform-card__name">Steven Manirath</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(28)"><img src="https://physique-academy.s3.amazonaws.com/transformations/alex-bond.webp" alt="Alex Bond" loading="lazy"><div class="transform-card__name">Alex Bond</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(29)"><img src="https://physique-academy.s3.amazonaws.com/transformations/joe-schafer.webp" alt="Joe Schafer" loading="lazy"><div class="transform-card__name">Joe Schafer</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(30)"><img src="https://physique-academy.s3.amazonaws.com/transformations/sean-kelly.webp" alt="Sean Kelly" loading="lazy"><div class="transform-card__name">Sean Kelly</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(31)"><img src="https://physique-academy.s3.amazonaws.com/transformations/tim-giessauf.webp" alt="Tim Giessauf" loading="lazy"><div class="transform-card__name">Tim Giessauf</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(32)"><img src="https://physique-academy.s3.amazonaws.com/transformations/luke-salmons.webp" alt="Luke Salmons" loading="lazy"><div class="transform-card__name">Luke Salmons</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(33)"><img src="https://physique-academy.s3.amazonaws.com/transformations/zack-bennema.webp" alt="Zack Bennema" loading="lazy"><div class="transform-card__name">Zack Bennema</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(34)"><img src="https://physique-academy.s3.amazonaws.com/transformations/aaron-lake.webp" alt="Aaron Lake" loading="lazy"><div class="transform-card__name">Aaron Lake</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(35)"><img src="https://physique-academy.s3.amazonaws.com/transformations/jake-mcdonell.webp" alt="Jake McDonell" loading="lazy"><div class="transform-card__name">Jake McDonell</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(36)"><img src="https://physique-academy.s3.amazonaws.com/transformations/jake-carus.webp" alt="Jake Carus" loading="lazy"><div class="transform-card__name">Jake Carus</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(37)"><img src="https://physique-academy.s3.amazonaws.com/transformations/andy-taylor.webp" alt="Andy Taylor" loading="lazy"><div class="transform-card__name">Andy Taylor</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(38)"><img src="https://physique-academy.s3.amazonaws.com/transformations/alex-purcell.webp" alt="Alex Purcell" loading="lazy"><div class="transform-card__name">Alex Purcell</div></div>
+      <div class="transform-card" onclick="openSummerShredLightbox(39)"><img src="https://physique-academy.s3.amazonaws.com/transformations/oliver-urban.webp" alt="Oliver Urban" loading="lazy"><div class="transform-card__name">Oliver Urban</div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA STRIPE -->
-<div class="ss-stripe">
-  <div class="ss-stripe__small">Limited Spots Available</div>
-  <a href="javascript:void(0);" onclick="openSummerShredCheckout()" class="ss-stripe__btn">Secure Your Spot From $99/Week</a>
-</div>
+<!-- PRICING (bottom) -->
+<section class="pricing">
+  <div class="pricing__container">
+    <div class="pricing__header">
+      <div class="pricing__meta">16 Weeks &middot; 1-on-1 Coaching &middot; $3,000 Prize</div>
+      <div class="pricing__price">From <span>$99</span><em>/ week</em></div>
+      <div class="pricing__guarantee">Guaranteed results or your money back</div>
+    </div>
+    <div class="pricing__grid">
+      <div class="pricing__card">
+        <div class="pricing__plan">Payment Plan</div>
+        <div class="pricing__amount">$117 <span>/ week</span></div>
+        <div class="pricing__sub">4 payments of $469 &middot; $1,879 total</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features">
+          <li>Spread cost over 4 months</li>
+          <li>Full 16 week programme</li>
+          <li>1-on-1 coaching</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/summer-shred-2026" class="pricing__btn pricing__btn--outline">Pay Monthly</a>
+      </div>
+      <div class="pricing__card pricing__card--featured">
+        <div class="pricing__badge">Best Value &middot; Save $295</div>
+        <div class="pricing__plan">Pay In Full</div>
+        <div class="pricing__amount">$99 <span>/ week</span></div>
+        <div class="pricing__sub">One single payment of $1,584</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features pricing__features--gold">
+          <li>Best price guaranteed</li>
+          <li>Full 16 week programme</li>
+          <li>1-on-1 coaching</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/summer-shred-2026-full" class="pricing__btn">Pay In Full</a>
+      </div>
+    </div>
+    <div class="pricing__close-line">Sign Up Closes 30<sup>th</sup> April <span>Spots Are Limited</span></div>
+  </div>
+</section>
 
 <!-- BOTTOM CTA -->
-<section class="ss-bottom">
-  <div class="ss-bottom__eyebrow">Got Questions?</div>
+<section class="bottom-cta">
+  <div class="bottom-cta__eyebrow">Prefer To Talk It Through?</div>
   <h2>Book A Free Call To Chat</h2>
-  <a href="javascript:void(0);" onclick="openSummerShredBookingModal()" class="ss-bottom__btn">Let&rsquo;s Chat About It</a>
+  <a href="javascript:void(0);" onclick="openSummerShredBookingModal()" class="bottom-cta__btn">Book A Call</a>
 </section>
 
 <!-- FOOTER -->
-<footer class="ss-footer">
+<footer class="footer">
   <div><img src="https://physique-academy.s3.amazonaws.com/general/PA-Logo-Green-White.png" alt="Physique Academy"></div>
   <p>&copy; 2026 Physique Academy. All rights reserved.</p>
   <p>Results may vary. Individual outcomes depend on effort, adherence, and starting point.</p>
 </footer>
 
 <!-- BOOKING MODAL -->
-<div class="ss-modal-overlay" id="ss-bookingModal">
-  <div class="ss-modal">
-    <button class="ss-modal-close" onclick="closeSummerShredBookingModal()" aria-label="Close"></button>
-    <div class="ss-modal-content">
-      <div style="background:#f8f9fa;color:#333;padding:1rem;text-align:center;font-family:'Inter',sans-serif">
-        <div style="font-size:clamp(0.9rem,3vw,1.4rem);font-weight:600;line-height:1.3">
-          <strong>Book your <span style="color:#F5B800;font-weight:800">Free Call</span> in under <span style="color:#F5B800;font-weight:800">60 seconds</span></strong>
-        </div>
-      </div>
-      <iframe src="https://api.leadconnectorhq.com/widget/booking/zq9rJ1MN23szkjo199Wm" style="width:100%;border:none;overflow:hidden;min-height:600px;" scrolling="no" id="ss-booking-iframe"></iframe>
+<div class="booking-overlay" id="ss-bookingModal">
+  <div class="booking-modal">
+    <button class="booking-modal-close" onclick="closeSummerShredBookingModal()" aria-label="Close"></button>
+    <div class="booking-modal-content">
+      <iframe data-src="https://api.leadconnectorhq.com/widget/booking/QjYl1fM0ogoTPQ6gKPQu"
+              style="width:100%;border:none;height:90vh;max-height:90vh;display:block"
+              scrolling="yes"
+              id="ZTobsHsJbcUx6oDzNaqz_1776289050000"></iframe>
     </div>
   </div>
 </div>
 
 <!-- LIGHTBOX -->
-<div class="ss-lightbox" id="ss-lightbox">
-  <button onclick="closeSummerShredLightbox()" class="ss-lb-btn" style="top:20px;right:20px;width:42px;height:42px;border-radius:10px;font-size:18px">&#10005;</button>
-  <button onclick="ssPrevImage()" class="ss-lb-btn" style="left:20px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;font-size:22px">&#8249;</button>
-  <button onclick="ssNextImage()" class="ss-lb-btn" style="right:20px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;font-size:22px">&#8250;</button>
+<div id="ss-lightbox">
+  <button onclick="closeSummerShredLightbox()" class="lb-btn" style="top:20px;right:20px;width:42px;height:42px;border-radius:10px;font-size:18px">&#10005;</button>
+  <button onclick="ssPrevImage()" class="lb-btn" style="left:20px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;font-size:22px">&#8249;</button>
+  <button onclick="ssNextImage()" class="lb-btn" style="right:20px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;font-size:22px">&#8250;</button>
   <div style="max-width:860px;width:100%;text-align:center">
     <img id="ss-lb-img" src="" alt="" style="max-width:100%;max-height:82vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,0.8);object-fit:contain">
     <p id="ss-lb-name" style="margin-top:14px;font-size:15px;font-weight:700;color:#fff"></p>
@@ -492,19 +902,29 @@ article:has(.pa-summer-shred),
 
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 <script>
-function openSummerShredBookingModal(){document.getElementById('ss-bookingModal').classList.add('ss-active');document.body.style.overflow='hidden'}
-function closeSummerShredBookingModal(){document.getElementById('ss-bookingModal').classList.remove('ss-active');document.body.style.overflow=''}
+(function(){
+function openSummerShredBookingModal(){
+  var iframe=document.getElementById('ZTobsHsJbcUx6oDzNaqz_1776289050000');
+  if(!iframe.src&&iframe.dataset.src){iframe.src=iframe.dataset.src}
+  document.getElementById('ss-bookingModal').classList.add('active');document.body.style.overflow='hidden';
+}
+function scrollSummerShredToPricing(){
+  var el=document.getElementById('ss-pricing');
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function closeSummerShredBookingModal(){document.getElementById('ss-bookingModal').classList.remove('active');document.body.style.overflow=''}
 document.getElementById('ss-bookingModal').addEventListener('click',function(e){if(e.target===this)closeSummerShredBookingModal()});
-function openSummerShredCheckout(){if(window.SS_STRIPE_URL){window.location.href=window.SS_STRIPE_URL}else{openSummerShredBookingModal()}}
-const ssImgs=Array.from(document.querySelectorAll('.pa-summer-shred .ss-transform-card img')).map(i=>({src:i.src,name:i.alt}));
-let ssCi=0;
+
+// Transformations lightbox (pa-ads-landing pattern)
+var ssImgs=Array.prototype.slice.call(document.querySelectorAll('.pa-summer-shred .transform-card img')).map(function(i){return{src:i.src,name:i.alt}});
+var ssCi=0;
 function ssShow(i){ssCi=(i+ssImgs.length)%ssImgs.length;document.getElementById('ss-lb-img').src=ssImgs[ssCi].src;document.getElementById('ss-lb-img').alt=ssImgs[ssCi].name;document.getElementById('ss-lb-name').textContent=ssImgs[ssCi].name;document.getElementById('ss-lb-counter').textContent=(ssCi+1)+' / '+ssImgs.length}
 function openSummerShredLightbox(i){document.getElementById('ss-lightbox').style.display='flex';document.body.style.overflow='hidden';ssShow(i)}
 function closeSummerShredLightbox(){document.getElementById('ss-lightbox').style.display='none';document.body.style.overflow=''}
 function ssNextImage(){ssShow(ssCi+1)}
 function ssPrevImage(){ssShow(ssCi-1)}
 function openSummerShredExcuseImg(el){
-  const img=el.querySelector('img');
+  var img=el.querySelector('img');
   document.getElementById('ss-lb-img').src=img.src;
   document.getElementById('ss-lb-img').alt=img.alt;
   document.getElementById('ss-lb-name').textContent=img.alt;
@@ -512,13 +932,37 @@ function openSummerShredExcuseImg(el){
   document.getElementById('ss-lightbox').style.display='flex';
   document.body.style.overflow='hidden';
 }
+function openSummerShredImg(img){
+  document.getElementById('ss-lb-img').src=img.src;
+  document.getElementById('ss-lb-img').alt=img.alt;
+  document.getElementById('ss-lb-name').textContent=img.alt||'';
+  document.getElementById('ss-lb-counter').textContent='';
+  document.getElementById('ss-lightbox').style.display='flex';
+  document.body.style.overflow='hidden';
+}
 document.getElementById('ss-lightbox').addEventListener('click',function(e){if(e.target===this)closeSummerShredLightbox()});
 document.addEventListener('keydown',function(e){
-  if(document.getElementById('ss-bookingModal').classList.contains('ss-active')){if(e.key==='Escape')closeSummerShredBookingModal();return}
+  if(document.getElementById('ss-bookingModal').classList.contains('active')){if(e.key==='Escape')closeSummerShredBookingModal();return}
   if(document.getElementById('ss-lightbox').style.display==='flex'){
     if(e.key==='Escape')closeSummerShredLightbox();
     if(e.key==='ArrowLeft')ssPrevImage();
     if(e.key==='ArrowRight')ssNextImage();
   }
 });
+
+// Reveal on scroll
+var ssObs=new IntersectionObserver(function(e){e.forEach(function(el){if(el.isIntersecting){el.target.classList.add('visible');ssObs.unobserve(el.target)}})},{threshold:.06});
+document.querySelectorAll('.pa-summer-shred [data-reveal]').forEach(function(el){ssObs.observe(el)});
+
+// Expose namespaced functions globally for inline onclick handlers
+window.openSummerShredBookingModal=openSummerShredBookingModal;
+window.closeSummerShredBookingModal=closeSummerShredBookingModal;
+window.scrollSummerShredToPricing=scrollSummerShredToPricing;
+window.openSummerShredLightbox=openSummerShredLightbox;
+window.closeSummerShredLightbox=closeSummerShredLightbox;
+window.ssNextImage=ssNextImage;
+window.ssPrevImage=ssPrevImage;
+window.openSummerShredExcuseImg=openSummerShredExcuseImg;
+window.openSummerShredImg=openSummerShredImg;
+})();
 </script>
