@@ -62,6 +62,9 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 .hero__bottom-line span{color:var(--gold);font-weight:700}
 .hero__bottom-line .hero__bl-break{display:none}
 .hero__video-wrap{background:#000;padding:0 0 24px}
+.banner-fullbleed{background:#0a0a0a;line-height:0;max-height:480px;overflow:hidden}
+.banner-fullbleed img{width:100%;height:auto;max-height:480px;object-fit:cover;object-position:center;display:block}
+@media(max-width:768px){.banner-fullbleed,.banner-fullbleed img{max-height:280px}}
 .hero__banner-img{background:#000;line-height:0;padding:0 20px 40px;max-width:1100px;margin:0 auto}
 .hero__banner-img img{width:100%;height:auto;max-height:420px;object-fit:cover;object-position:center;display:block;border-radius:12px}
 @media(max-width:768px){.hero__banner-img{padding:0 16px 28px}.hero__banner-img img{max-height:260px}}
@@ -449,7 +452,7 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 </section>
 
 <!-- BANNER IMAGE (below pricing) -->
-<div class="hero__banner-img" style="background:#0a0a0a;padding-top:0">
+<div class="banner-fullbleed">
   <img src="https://physique-academy.s3.amazonaws.com/summer-shred/hero-02.jpg" alt="Summer Shred" loading="lazy">
 </div>
 
