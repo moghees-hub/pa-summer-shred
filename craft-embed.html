@@ -29,7 +29,7 @@ article:has(.pa-summer-shred),
 .pa-summer-shred .excuses,.pa-summer-shred .excuses .container,.pa-summer-shred .excuse-grid,.pa-summer-shred .excuse-card,.pa-summer-shred .excuse-card__img,.pa-summer-shred .excuse-card__text,
 .pa-summer-shred .testimonials,.pa-summer-shred .testimonials .container,.pa-summer-shred .testi-grid,.pa-summer-shred .testi-card,.pa-summer-shred .testi-card__thumb,.pa-summer-shred .testi-card__body,
 .pa-summer-shred .transform-section,.pa-summer-shred .transform-section .container,.pa-summer-shred .transform-grid,.pa-summer-shred .transform-card,.pa-summer-shred .transform-card__name,
-.pa-summer-shred .pricing,.pa-summer-shred .pricing__container,.pa-summer-shred .pricing__header,.pa-summer-shred .pricing__grid,.pa-summer-shred .pricing__card,.pa-summer-shred .pricing__badge,.pa-summer-shred .pricing__features,.pa-summer-shred .pricing__btn,.pa-summer-shred .pricing__divider,
+.pa-summer-shred .pricing,.pa-summer-shred .pricing__container,.pa-summer-shred .pricing__title,.pa-summer-shred .pricing__grid,.pa-summer-shred .pricing__card,.pa-summer-shred .pricing__badge,.pa-summer-shred .pricing__features,.pa-summer-shred .pricing__btn,.pa-summer-shred .pricing__divider,
 .pa-summer-shred .bottom-cta,.pa-summer-shred .bottom-cta__btn,
 .pa-summer-shred .footer,
 .pa-summer-shred .booking-overlay,.pa-summer-shred .booking-modal,.pa-summer-shred .booking-modal-close,.pa-summer-shred .booking-modal-content,
@@ -282,12 +282,7 @@ article:has(.pa-summer-shred),
 .pa-summer-shred #ss-pricing{scroll-margin-top:56px}
 .pa-summer-shred .pricing{background:#0a0a0a;padding:0;color:#fff}
 .pa-summer-shred .pricing__container{max-width:980px;margin:0 auto;padding:32px 20px}
-.pa-summer-shred .pricing__header{border:2px solid var(--gold);border-radius:14px;padding:22px 24px 24px;text-align:center;margin-bottom:22px}
-.pa-summer-shred .pricing__meta{font-size:12px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.16em;margin-bottom:10px}
-.pa-summer-shred .pricing__price{font-family:'Oswald',sans-serif;font-size:clamp(32px,4.5vw,46px);font-weight:600;color:#fff;line-height:1;margin-bottom:8px}
-.pa-summer-shred .pricing__price span{font-weight:700}
-.pa-summer-shred .pricing__price em{font-style:normal;color:rgba(255,255,255,0.65);font-weight:400;font-size:.6em;margin-left:4px}
-.pa-summer-shred .pricing__guarantee{font-size:14px;color:rgba(255,255,255,0.7);font-weight:500}
+.pa-summer-shred .pricing__title{font-family:'Oswald',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:700;color:#fff;text-align:center;text-transform:uppercase;line-height:1.05;margin:0 0 24px}
 .pa-summer-shred .pricing__grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .pa-summer-shred .pricing__card{background:#161616;border:2px solid #2a2a2a;border-radius:14px;padding:24px 24px 22px;position:relative;display:flex;flex-direction:column}
 .pa-summer-shred .pricing__card--featured{border-color:var(--gold)}
@@ -311,7 +306,6 @@ article:has(.pa-summer-shred),
 @media(max-width:768px){
   .pa-summer-shred .pricing__container{padding:24px 16px}
   .pa-summer-shred .pricing__grid{grid-template-columns:1fr;gap:18px}
-  .pa-summer-shred .pricing__header{padding:18px 18px 20px;margin-bottom:18px}
   .pa-summer-shred .pricing__card{padding:22px 20px}
 }
 
@@ -447,11 +441,7 @@ article:has(.pa-summer-shred),
 <!-- PRICING (top) -->
 <section class="pricing" id="ss-pricing">
   <div class="pricing__container">
-    <div class="pricing__header">
-      <div class="pricing__meta">16 Weeks &middot; 1-on-1 Coaching &middot; $3,000 Prize</div>
-      <div class="pricing__price">From <span>$99</span><em>/ week</em></div>
-      <div class="pricing__guarantee">Guaranteed results or your money back</div>
-    </div>
+    <h2 class="pricing__title">Choose Your Plan</h2>
     <div class="pricing__grid">
       <div class="pricing__card">
         <div class="pricing__plan">Payment Plan</div>
@@ -823,11 +813,7 @@ article:has(.pa-summer-shred),
 <!-- PRICING (bottom) -->
 <section class="pricing">
   <div class="pricing__container">
-    <div class="pricing__header">
-      <div class="pricing__meta">16 Weeks &middot; 1-on-1 Coaching &middot; $3,000 Prize</div>
-      <div class="pricing__price">From <span>$99</span><em>/ week</em></div>
-      <div class="pricing__guarantee">Guaranteed results or your money back</div>
-    </div>
+    <h2 class="pricing__title">Choose Your Plan</h2>
     <div class="pricing__grid">
       <div class="pricing__card">
         <div class="pricing__plan">Payment Plan</div>
