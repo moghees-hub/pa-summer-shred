@@ -43,10 +43,13 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 [data-reveal].visible{opacity:1;transform:none}
 
 /* GENERIC CTA BAR (yellow stripe) */
-.cta-stripe{background:var(--gold-grad);padding:22px 20px;text-align:center;color:#000}
-.cta-stripe__small{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#000;opacity:.85;margin-bottom:10px}
-.cta-stripe__btn{display:inline-block;background:#000;color:var(--gold);font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:16px 36px;border-radius:8px;text-decoration:none;transition:transform .2s,background .2s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
-.cta-stripe__btn:hover{transform:scale(1.05);background:#1a1a1a}
+.cta-stripe{background:#0a0a0a;padding:26px 20px;text-align:center;color:#fff;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+.cta-stripe__small{font-family:'Oswald',sans-serif;font-size:clamp(14px,1.8vw,18px);font-weight:600;text-transform:uppercase;color:#fff;margin-bottom:14px;line-height:1.2}
+.cta-stripe__small span{color:var(--gold);font-weight:700}
+.cta-stripe__btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold-grad);color:#000;font-family:'Oswald',sans-serif;font-size:clamp(18px,2.2vw,24px);font-weight:700;text-transform:uppercase;padding:16px 36px;border-radius:10px;text-decoration:none;transition:transform .2s,filter .2s;cursor:pointer;border:none}
+.cta-stripe__btn::after{content:'\2192';font-size:1.1em;line-height:1}
+.cta-stripe__btn:hover{transform:scale(1.03);filter:brightness(1.06)}
+@media(max-width:768px){.cta-stripe{padding:20px 16px}.cta-stripe__btn{padding:14px 24px;font-size:16px}}
 
 /* HERO */
 .hero{background:#000;padding:0;text-align:center;position:relative;overflow:hidden}
@@ -274,8 +277,9 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 .pricing__btn:hover{transform:scale(1.02);filter:brightness(1.05)}
 .pricing__btn--outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25)}
 .pricing__btn--outline:hover{border-color:var(--gold);color:var(--gold)}
-.pricing__close-line{font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,32px);color:#fff;font-weight:600;text-transform:uppercase;text-align:center;line-height:1.05;margin-top:22px}
+.pricing__close-line{font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,32px);color:#fff;font-weight:600;text-transform:uppercase;text-align:center;line-height:1.15;margin-top:22px}
 .pricing__close-line sup{font-size:.55em;vertical-align:super;font-weight:500;text-transform:uppercase;margin-left:1px}
+.pricing__close-line span{display:block;color:var(--gold);font-size:.7em;font-weight:700;margin-top:4px}
 @media(max-width:768px){
   .pricing__container{padding:24px 16px}
   .pricing__grid{grid-template-columns:1fr;gap:18px}
@@ -447,12 +451,12 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
         <a href="https://billing.physiqueacademy.com/summer-shred-2026-full" class="pricing__btn">Pay In Full</a>
       </div>
     </div>
-    <div class="pricing__close-line">Sign Up Closes 30<sup>th</sup> April</div>
+    <div class="pricing__close-line">Sign Up Closes 30<sup>th</sup> April <span>Spots Are Limited</span></div>
   </div>
 </section>
 
 <!-- BANNER IMAGE (below pricing) -->
-<div class="banner-fullbleed">
+<div class="hero__banner-img" style="background:#0a0a0a">
   <img src="https://physique-academy.s3.amazonaws.com/summer-shred/hero-02.jpg" alt="Summer Shred" loading="lazy">
 </div>
 
@@ -603,6 +607,7 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 
 <!-- CTA STRIPE -->
 <div class="cta-stripe">
+  <div class="cta-stripe__small">Sign Up Closes 30<sup>th</sup> April &middot; <span>Spots Are Limited</span></div>
   <a href="javascript:void(0);" onclick="scrollToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
 </div>
 
@@ -655,6 +660,7 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 
 <!-- CTA STRIPE -->
 <div class="cta-stripe">
+  <div class="cta-stripe__small">Sign Up Closes 30<sup>th</sup> April &middot; <span>Spots Are Limited</span></div>
   <a href="javascript:void(0);" onclick="scrollToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
 </div>
 
@@ -709,6 +715,7 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
 
 <!-- CTA STRIPE -->
 <div class="cta-stripe">
+  <div class="cta-stripe__small">Sign Up Closes 30<sup>th</sup> April &middot; <span>Spots Are Limited</span></div>
   <a href="javascript:void(0);" onclick="scrollToPricing()" class="cta-stripe__btn">Secure Your Spot From $99/Week</a>
 </div>
 
@@ -823,7 +830,7 @@ h1,h2,h3,.hero__title,.hero__sub-title,.hero__headline,.hero__close-line,.hero__
         <a href="https://billing.physiqueacademy.com/summer-shred-2026-full" class="pricing__btn">Pay In Full</a>
       </div>
     </div>
-    <div class="pricing__close-line">Sign Up Closes 30<sup>th</sup> April</div>
+    <div class="pricing__close-line">Sign Up Closes 30<sup>th</sup> April <span>Spots Are Limited</span></div>
   </div>
 </section>
 
